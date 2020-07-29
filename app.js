@@ -1,13 +1,8 @@
-import React, { Component } from 'react';
+require('dotenv').config()
+const express = require('express')
+ 
+const app = express();
 
-class app extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        );
-    }
-}
+app.use(express.static('public'));
 
-export default app;
+app.listen(process.env.PORT, () => console.log(`My app is on port ${process.env.PORT} `));
