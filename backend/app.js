@@ -5,4 +5,4 @@ const app = express();
 
 app.use(express.static('public'));
 
-app.listen(process.env.PORT, () => console.log(`My app is on port ${process.env.PORT} `));
+app.listen(process.env.PORT, () => console.log(`My app is ${process.env.PORT} `));
