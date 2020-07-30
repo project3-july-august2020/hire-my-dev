@@ -4,6 +4,7 @@
   "description": "An interactive application designed for student developers and bootcamp graduates, providing them a platform to highlight their profiles, portfolios, and achievements while giving recruiters a simplified, centralized location to search for developer talent.",
   "main": "app.js",
   "dependencies": {
+    "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "node": "^14.5.0",
