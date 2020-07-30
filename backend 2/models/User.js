@@ -11,10 +11,10 @@ const userSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref:"Project"
   },
-  favorite_jobs: [{
+  favorite_jobs: {
     type: Schema.Types.ObjectId,
     ref:"Jobs"
-  }],
+  },
   });
 
   userSchema.plugin(PLM, { usernameField: "username" });

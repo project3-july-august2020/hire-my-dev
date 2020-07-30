@@ -11,6 +11,10 @@ const Job = new Schema({
     title: String,
     how_to_apply: String,
     company_logo:String,
+    Owner: {
+      type: Schema.Types.ObjectId,
+      ref:"User"
+    },
     });
 
     module.exports = model('Job', Schema);

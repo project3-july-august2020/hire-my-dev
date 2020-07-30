@@ -3,7 +3,7 @@ let baseURL;
 
 process.env.NODE_ENV === 'production'
   // ? (baseURL = 'https://sheltered-dawn-07708.herokuapp.com')
-  ? (baseURL = 'http://localhost:5000')
+  ? (baseURL = 'window.location.origin')
   : (baseURL = 'http://localhost:5000');
 
 const service = axios.create({ withCredentials: true, baseURL });
@@ -20,6 +20,9 @@ const actions = {
   },
   logOut: async () => {
     return await service.get('/logout')
+  },
+  fileUpload: async (data) => {
+    return await service.post('/fileupload', data)
   }
 };
 

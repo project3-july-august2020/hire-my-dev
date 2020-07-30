@@ -7,7 +7,7 @@ const Project = new Schema({
     description: String,
     githublink: String,
     sitelink: String,
-    owner: {
+    Owner: {
       type: Schema.Types.ObjectId,
       ref:"User"
     },
