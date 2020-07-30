@@ -4,6 +4,7 @@ const { Schema, model } = mongoose;
 const Project = new Schema({
     picture: String,
     title: String,
+    technologies_used: String,
     description: String,
     githublink: String,
     sitelink: String,
