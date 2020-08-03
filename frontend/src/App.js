@@ -9,6 +9,7 @@ import actions from "./services/index";
 import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
 import Landingpage from "./components/Landingpage/Landingpage"
+import "./index.css"
 
 class App extends Component {
   state = {};
@@ -39,7 +40,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         {this.state.email}
-        <nav>
+        <nav className = 'nav-item'>
           <NavLink to="/">Home |</NavLink>
 
           {this.state.email ? (
@@ -73,8 +74,8 @@ class App extends Component {
 
           <Route component={NotFound} />
         </Switch>
-        {!this.state.email && <GoogleAuth setUser={this.setUser} />}
-        {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />}
+        {/* {!this.state.email && <GoogleAuth setUser={this.setUser} />}
+        {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />} */}
 
         <form><input type='file' onChange={this.handlechange}/></form>
 

@@ -2,57 +2,40 @@ import React, { Component } from 'react';
 import ReactDOM from "react-dom";
 import './landingpage.css';
 
-
-
 class Landingpage extends Component {
-    
-    
     render() {
-
-        
-        
         return (
-            <div class="container-fluid main">
-
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span> 
-                        </button>
-                        <a class="navbar-brand" href="#">Website</a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="3000">
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active background a"></div>
-                    <div class="item background b"></div>
-                    <div class="item background c"></div>
-                </div>
+            <div>
+                <section class="cover">
+  <nav>
+    <span class="logo">
+    Hire me dev.
+  </span>
+    <ul>
+      <li>Products</li>
+      <li>Services</li>
+      <li>Articles</li>
+      <li>More</li>
+      <li></li>
+      <li>Sign In</li>
+      <li class="ghost-btn">Sign up for free</li>
+    </ul>
+  </nav>
+  <div class="content">
+    <h2 class="heading">We are here<br />for all your need.</h2>
+    <p></p>
+    <div class="cta-btn">
+    <a href="#">Get Started</a>
+    </div>
+    <p class="highlight">Profile | Set Up</p>
+    <div class="card">
+      <h2>Hire-Me-Dev</h2>
+      <p>Hire me dev is a site for developers to connect and gain job experience</p>
+    </div>
+  </div>
+</section>
             </div>
-
-            <div class="covertext">
-                <div class="col-lg-10" >
-                    <h1 class="title">Hire-Me-Dev</h1>
-                    <h3 class="subtitle">A site where Junior Devs can connect</h3>
-                </div>
-                <div class="col-xs-12 explore">
-                    <a href="#"><button type="button" class="btn btn-lg explorebtn">EXPLORE</button></a>
-                </div>
-            </div>
-
-        </div>
-
-        )
+        );
     }
 }
 
