@@ -11,6 +11,7 @@ router.post('/signup', (req, res, next) => {
         })
     })
     .catch((err) => { 
+      console.log(req.body)
       console.log(err)
       res.status(500).json({ err })
     });
@@ -26,6 +27,7 @@ router.get('/is-logged-in', (req, res, next) => {
 router.post('/login', passport.authenticate('local'), (req, res, next) => {
   const { user } = req;
   res.status(200).json(user);
+  console.log(user);
 });
 
 router.get('/logout', (req, res, next) => {

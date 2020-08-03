@@ -23,6 +23,9 @@ const actions = {
   },
   fileUpload: async (data) => {
     return await service.post('/fileupload', data)
+  },
+  userdata: async (userdata) => {
+    return await service.post('/userdata', userdata)
   }
 };
 

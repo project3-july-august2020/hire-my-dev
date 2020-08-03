@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 
-const Project = new Schema({
+const projectSchema = new Schema({
     picture: String,
     title: String,
+    technologies_used: String,
     description: String,
-    githublink: String,
+    githubrepourl: String,
     sitelink: String,
     owner: {
       type: Schema.Types.ObjectId,
@@ -13,4 +14,4 @@ const Project = new Schema({
     },
     });
 
-    module.exports = model('Project', Schema);
+    module.exports = model('Project', projectSchema );
