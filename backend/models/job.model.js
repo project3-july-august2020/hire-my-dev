@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 
-const Job = new Schema({
+const jobSchema  = new Schema({
+    id: String,
     type: String,
     url: String,
     createdate: String,
@@ -13,4 +14,4 @@ const Job = new Schema({
     company_logo:String,
     });
 
-    module.exports = model('Job', Schema);
+    module.exports = model('Job', jobSchema);
