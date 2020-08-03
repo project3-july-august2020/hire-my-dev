@@ -14,4 +14,4 @@ const projectSchema = new Schema({
     },
     });
 
-    module.exports = model('project', projectSchema );
+    module.exports = model('Project', projectSchema );

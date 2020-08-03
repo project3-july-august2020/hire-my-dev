@@ -11,14 +11,18 @@ class Profile extends Component {
     }
 
     handleChange = (e) => {
-        [e.target.name] = e.target.value
+        this.setState({ [e.target.name]: e.target.value  });
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
-        actions.userdata(this.state).then(user=> {
-            this.props.setUser({...user.data})  
-        }).catch(({ response }) => console.error(response.data));
+        let res = await actions.userdata(this.state)
+
+        console.log(res);
+        
+        // .then(user=> {
+        //     this.props.setUser({...user.data})  
+        // }).catch(({ response }) => console.error(response.data));
     }
 
     render(){
@@ -39,12 +43,12 @@ class Profile extends Component {
                     <br/>
                 <label>
                     Linkedinurl:
-                    <textarea name="linkedinurl" onChange={this.handleChange}/>
+                    <input name="linkedinurl" onChange={this.handleChange}/>
                 </label>
                     <br/>
                     <label>
                     Githublink:
-                    <textarea name="githublink" onChange={this.handleChange}/>
+                    <input name="githublink" onChange={this.handleChange}/>
                 </label>
                     <br/>
                 <label>
@@ -69,7 +73,7 @@ class Profile extends Component {
                     <br/>
                     <label>
                     githubrepourl:
-                    <textarea name="githubrepourl" onChange={this.handleChange}/>
+                    <input name="githubrepourl" onChange={this.handleChange}/>
                 </label>
                     <br/>
                 <label>

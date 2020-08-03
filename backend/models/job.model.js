@@ -14,4 +14,4 @@ const jobSchema  = new Schema({
     company_logo:String,
     });
 
-    module.exports = model('job', jobSchema);
+    module.exports = model('Job', jobSchema);
