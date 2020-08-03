@@ -6,15 +6,15 @@ const userSchema = new Schema({
   username: String,
   password: String,
   skills: [String],
-  linkedinurl: String,
-  email: String,
-  githuburl: String,
   about: String,
   projects: {
     type: Schema.Types.ObjectId,
     ref:"Project"
   },
-  favorite_jobs: [String],
+  favorite_jobs: [{
+    type: Schema.Types.ObjectId,
+    ref:"Jobs"
+  }],
   });
 
   userSchema.plugin(PLM, { usernameField: "username" });

@@ -8,6 +8,7 @@ import Profile from "./components/profile/Profile";
 import actions from "./services/index";
 import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
+import Landingpage from "./components/Landingpage/Landingpage"
 
 class App extends Component {
   state = {};
@@ -52,6 +53,7 @@ class App extends Component {
             <Fragment>
               <NavLink to="/sign-up">Sign Up |</NavLink>
               <NavLink to="/log-in">Log In |</NavLink>
+              <NavLink to="/landingpage">Starting screen |</NavLink>
             </Fragment>
           )}
         </nav>
@@ -67,11 +69,7 @@ class App extends Component {
             path="/log-in"
             render={(props) => <LogIn {...props} setUser={this.setUser} />}
           />
-          <Route
-            exact
-            path="/profile"
-            render={(props) => <Profile {...props} user={this.state} />}
-          />
+          <Route exact path='/landingpage' render={() => <Landingpage/>} />
 
           <Route component={NotFound} />
         </Switch>
@@ -79,6 +77,8 @@ class App extends Component {
         {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />}
 
         <form><input type='file' onChange={this.handlechange}/></form>
+
+
       </BrowserRouter>
     );
   }
