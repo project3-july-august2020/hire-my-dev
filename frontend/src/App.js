@@ -9,6 +9,7 @@ import actions from "./services/index";
 import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
 import Landingpage from "./components/Landingpage/Landingpage"
+import Jobs from './components/jobs/Jobs';
 import "./index.css"
 
 class App extends Component {
@@ -55,11 +56,13 @@ class App extends Component {
               <NavLink to="/sign-up">Sign Up |</NavLink>
               <NavLink to="/log-in">Log In |</NavLink>
               <NavLink to="/landingpage">Starting screen |</NavLink>
+              <NavLink to="/jobs">Find Jobs</NavLink>
             </Fragment>
           )}
         </nav>
         <Switch>
           <Route exact path="/" render={(props) => <Home {...props} />} />
+          <Route exact path="/jobs" render={(props) => <Jobs {...props} />} />
           <Route
             exact
             path="/sign-up"
