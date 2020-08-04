@@ -14,14 +14,25 @@ router.post('/fileupload', fileuploader.single('upload'), isAuth, (req, res, nex
 });
 
 
-router.post('/userdata', (req, res) => {
+router.post('/userdata', isAuth,(req, res) => {
   console.log('called');
-  let userdata = req.body
-  userdata._id = req.user._id
-  userdata.email = req.user.email
-  User.create(userdata)
-    .then(result => {res.json(`User data is added to database ${result}`)})
+  User.findByIdAndUpdate(req.user._id, req.body,{ new : true })
+    .then(result => {res.json(req.body)})
     .catch(error => console.log('An error happened while trying to post User data to database', error));
+});
+
+router.post('/project', isAuth, (req, res) => {
+  console.log('called');
+  Project.create({...req.body, owner: req.user._id})
+  .then(result => {
+    console.log(result, "stuff");
+    User.findByIdAndUpdate(req.user._id,{$push: {projects: result._id}},{ new : true })
+    .then(user => {res.json({user})})
+    .catch(error => console.log('An error happened while trying to post User data to database', error));
+    // result.json()
+  })
+      .catch(error => console.log('An error happened while trying to post User data to database', error));
+      
 });
 
 router.post('/favorite_job', isAuth, (req, res) => {
@@ -46,3 +57,9 @@ function isAuth(req, res, next) {
 
 module.exports = router;
 
+// picture: String,
+//     title: String,
+//     technologies_used: String,
+//     description: String,
+//     githubrepourl: String,
+//     sitelink: String,

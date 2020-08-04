@@ -26,7 +26,10 @@ const actions = {
   },
   userdata: async (userdata) => {
     return await service.post('/userdata', userdata)
-  }
+  },
+  project: async (data) => {
+    return await service.post('/project', data)
+  },
 };
 
 export default actions;
