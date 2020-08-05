@@ -28,11 +28,7 @@ h1 {
   box-shadow: 0 4px 10px 1px rgba(0,0,0,0.2); 
 }
 
-form {
- .text-wrap {
-    position: relative;
-    clear: both;
-  }
+/* form { */
   .text-wrap {
     margin: 1em 0;
   }
@@ -44,6 +40,7 @@ form {
       text-align: center;
         color: #480048;
   }
+
   input {
       width:100%;
       height: 3em;
@@ -64,4 +61,3 @@ form {
       font-weight: bold;
       color: #480048;
   }
-}
