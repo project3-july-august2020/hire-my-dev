@@ -43,7 +43,7 @@ class App extends Component {
       <BrowserRouter>
         {this.state.email}
         <nav className = 'nav-item'>
-          <NavLink to="/">Home |</NavLink>
+          {/* <NavLink to="/">Home |</NavLink> */}
 
           {this.state.email ? (
             <Fragment>
@@ -54,9 +54,9 @@ class App extends Component {
             </Fragment>
           ) : (
             <Fragment>
-              <NavLink to="/sign-up">Sign Up |</NavLink>
+              {/* <NavLink to="/sign-up">Sign Up |</NavLink>
               <NavLink to="/log-in">Log In |</NavLink>
-              <NavLink to="/jobs">Find Jobs</NavLink>
+              <NavLink to="/jobs">Find Jobs</NavLink> */}
             </Fragment>
           )}
         </nav>

@@ -49,7 +49,7 @@ class Landingpage extends Component {
           <span class="icon-bar"></span>
           <span class="icon-bar"></span> 
         </button>
-        <a class="navbar-brand" href="#">Website</a>
+        <a class="navbar-brand" href="/">Home</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
