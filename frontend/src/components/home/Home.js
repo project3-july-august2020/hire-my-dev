@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import actions from '../../services/index'
+import Landingpage from "../Landingpage/Landingpage"
 
 
 class Home extends Component {
@@ -9,7 +10,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        
+        <Landingpage />
       </div>
     );
   }

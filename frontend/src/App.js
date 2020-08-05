@@ -12,6 +12,7 @@ import Landingpage from "./components/Landingpage/Landingpage"
 import Jobs from './components/jobs/Jobs';
 import "./index.css"
 
+
 class App extends Component {
   state = {};
 
@@ -55,7 +56,6 @@ class App extends Component {
             <Fragment>
               <NavLink to="/sign-up">Sign Up |</NavLink>
               <NavLink to="/log-in">Log In |</NavLink>
-              <NavLink to="/landingpage">Starting screen |</NavLink>
               <NavLink to="/jobs">Find Jobs</NavLink>
             </Fragment>
           )}
@@ -73,7 +73,6 @@ class App extends Component {
             path="/log-in"
             render={(props) => <LogIn {...props} setUser={this.setUser} />}
           />
-          <Route exact path='/landingpage' render={() => <Landingpage/>} />
 
           <Route component={NotFound} />
         </Switch>

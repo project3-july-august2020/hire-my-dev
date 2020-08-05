@@ -1,16 +1,43 @@
 import React, { Component } from 'react';
 import './style.css';
 import ReactDOM from 'react-dom';
+import "./style.css"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import 'bootstrap';
+
+
 
 
 
 class Landingpage extends Component {
+  
+    componentDidMount(){
+      
+      setInterval(() => {
+        let arr = document.querySelectorAll(".background")
+        let i 
+        arr.forEach((el, index) => {
+          if (el.classList[3] === "active"){
+            el.classList.remove("active")
+            i = index
+          }
+        })
+        if (i === 2){
+          arr[0].classList.add("active")
+        }
+        else{
+          arr[i+1].classList.add("active")
+        }
+      }, 3000);
+    }
+
   render() {
     return (
-
       <div>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'/>
+{/* <link rel="stylesheet" href="./style.css"/> */}
+
 
 <div class="container-fluid main">
 
@@ -28,6 +55,10 @@ class Landingpage extends Component {
         <ul class="nav navbar-nav">
           <li><a href="#">About</a></li>
           <li><a href="#">Contact Us</a></li>
+          <li><a href="/sign-up">Sign-Up</a></li>
+          <li><a href="/log-in">Sign-In</a></li>
+          <li><a href="/jobs">Jobs</a></li>
+
         </ul>
       </div>
     </div>
@@ -35,7 +66,7 @@ class Landingpage extends Component {
 
   <div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="3000">
     <div class="carousel-inner" role="listbox">
-      <div class="item active background a"></div>
+      <div class="item background a active"></div>
       <div class="item background b"></div>
       <div class="item background c"></div>
     </div>
@@ -54,9 +85,8 @@ class Landingpage extends Component {
 </div>
 
 
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
-<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
-<script  src="./script.js"></script>
+{/* <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script> */}
 
 
 
