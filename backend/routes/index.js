@@ -35,6 +35,13 @@ router.post('/project', isAuth, (req, res) => {
       
 });
 
+router.get('/getuserdata', isAuth, (req, res) => {
+  console.log('called');
+  User.findById(req.user._id).populate('projects')
+  .then(user => res.json({user}))
+  .catch(error => res.json({error}));
+});
+
 router.post('/favorite_job', isAuth, (req, res) => {
   console.log('called');
   //will also need to add _id to userdata favorite_jobs string

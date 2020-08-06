@@ -30,6 +30,9 @@ const actions = {
   project: async (data) => {
     return await service.post('/project', data)
   },
+  getuserdata: async () => {
+    return await service.get('/getuserdata')
+  },
 };
 
 export default actions;

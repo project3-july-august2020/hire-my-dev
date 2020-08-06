@@ -11,6 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+.Job_container{
+  margin: 4;
+}
+
 /* nav{
   display: grid;
   grid-template-columns: 1fr 3fr;
