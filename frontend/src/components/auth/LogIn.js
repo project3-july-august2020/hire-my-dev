@@ -28,7 +28,7 @@ class LogIn extends Component {
                     <input type="submit" value="Log In"/>
                 </form> */}
 
-                <div class="container">
+                <div class="container2">
   <form onSubmit={this.handleSubmit} class="login-form">
     <div class="login-logo">
       <i class="glyphicon glyphicon-picture"></i> <span>Hire-My-Dev</span>

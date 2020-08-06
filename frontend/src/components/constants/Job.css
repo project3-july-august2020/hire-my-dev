@@ -22,3 +22,48 @@ body{
 .job_image{
     height: 50px;
 }
+.MuiButtonBase-root {
+
+    /*all :unset !important;*/
+    background: red !important;
+    border-radius: 100% !important;
+    height: 50px !important;
+    width:50px !important;
+}
+
+.MuiFormControl-root .MuiButtonBase-root{
+    background: green !important;
+    margin-right: -20px;
+}
+
+.MuiInputBase-input{
+   
+    width: 100% !important;
+    
+}
+
+.MuiInputLabel-outlined{
+    color:orange !important;
+    transform:translate(50px, 40px) !important;
+}
+
+.MuiInputLabel-shrink{
+    color:purple !important;
+    transform:translate(0px, 0px) !important;
+}
+
+.MuiInputBase-input:focus{
+   
+}
+.MuiOutlinedInput-notchedOutline{
+    border: none !important;
+}
+
+.MuiOutlinedInput-root{
+    background: none !important;
+    padding:0px !important;
+    border:none !important;
+    margin: 20px !important;
+    text-indent: none !important;
+    
+}
