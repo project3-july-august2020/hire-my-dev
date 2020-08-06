@@ -11,11 +11,13 @@ function Jobs() {
     const { jobs, loading, error, hasNextPage } = FetchJobs( params, page)
 
     function handleParamChange(e) {
+        console.log('Line 14 changepage');
         setPage(1)
         setParams( prevParams => {
             return {...prevParams, [e.target?.name]: e.target?.value};
         })
     }
+    console.log("line 20", page, params);
         return (
             <Container className="Job_container">
             <SearchForm params={params} onParamChange={handleParamChange} />

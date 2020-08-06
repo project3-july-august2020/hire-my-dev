@@ -8,7 +8,7 @@ const ACTIONS = {
     UPDATE_HAS_NEXT_PAGE: 'update-has-next-page'
 }
 
-const BASE_URL = "https://api.allorigins.win/raw?url=https://jobs.github.com/positions.json"
+const BASE_URL = "https://api.allorigins.win/raw?url=https://jobs.github.com/positions.json?"
 
 function reducer(state, action) {
     switch (action.type) {
@@ -31,10 +31,11 @@ export default function FetchJobs(params, page) {
     useEffect( () => {
         const cancelToken1 = axios.CancelToken.source()
         dispatch({ type: ACTIONS.MAKE_REQUEST})
-        axios.get(BASE_URL, {
+        axios.get(`https://api.allorigins.win/raw?url=https://jobs.github.com/positions.json?page=${page}`, {
             cancelToken: cancelToken1.token,
             params: { markdown: true, page: page, ...params}
         }).then( res => {
+            console.log("line 38 = ", res);
             dispatch({ type: ACTIONS.FETCH_DATA, payload: { jobs: res.data } }) 
         }).catch( e => {
             if(axios.isCancel(e)) return

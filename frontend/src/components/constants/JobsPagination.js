@@ -11,17 +11,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function JobsPagination() {
+export default function JobsPagination(props) {
   const classes = useStyles();
-  const [page, setPage] = React.useState(1);
+  // const [page, setPage] = React.useState(1);
   const handleChange = (event, value) => {
-    setPage(value);
+    console.log("line 18", value);
+    props.setPage(value);
   };
 
   return (
     <div className={classes.root}>
-      <Typography>Page: {page}</Typography>
-      <Pagination count={10} page={page} onChange={handleChange} />
+      <Typography>Page: {props.page}</Typography>
+      <Pagination count={10} page={props.page} onChange={handleChange} />
     </div>
   );
 }

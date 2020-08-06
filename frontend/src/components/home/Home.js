@@ -9,12 +9,8 @@ class Home extends Component {
   }
   render() {
     return (
-<<<<<<< HEAD
-      <div>                 
-=======
       <div>
         <Landingpage />
->>>>>>> ef1efc42e2bde54eefa00cbe6d0805f3a1c13872
       </div>
     );
   }
