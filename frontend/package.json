@@ -7,11 +7,22 @@
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
     "axios": "^0.19.2",
+<<<<<<< HEAD
     "material-ui-icons": "^1.0.0-beta.36",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-google-login": "^5.1.21",
     "react-markdown": "^4.3.1",
+=======
+    "bootstrap": "^4.5.1",
+    "carousel": "0.0.3",
+    "i": "^0.3.6",
+    "npm": "^6.14.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-google-login": "^5.1.21",
+    "react-responsive-carousel": "^3.2.9",
+>>>>>>> ef1efc42e2bde54eefa00cbe6d0805f3a1c13872
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "reactbulma": "^3.0.4"
