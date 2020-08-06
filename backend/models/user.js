@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 const PLM = require("passport-local-mongoose");
 
+console.log("IN USERS")
 const userSchema = new Schema({
   username: String,
   skills: [String],
