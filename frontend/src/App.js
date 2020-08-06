@@ -33,7 +33,6 @@ const App = () => {
     <BrowserRouter>
       {user?.email}
       <nav>
-        <NavLink to="/">Home |</NavLink>
 
         {user?.email ? (
           <Fragment>
@@ -44,10 +43,7 @@ const App = () => {
           </Fragment>
         ) : (
           <Fragment>
-            <NavLink to="/sign-up">Sign Up |</NavLink>
-            <NavLink to="/log-in">Log In |</NavLink>
-            <NavLink to="/landingpage">Starting screen |</NavLink>
-            <NavLink to="/jobs">Find Jobs</NavLink>
+            
           </Fragment>
         )}
       </nav>
