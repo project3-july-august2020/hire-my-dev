@@ -16,7 +16,7 @@ class Profile extends Component {
 
     handleSubmit = async (event) => {
         event.preventDefault();
-        let res = await actions.userdata(this.state)
+        let res = await actions.project(this.state)
 
         console.log(res);
         
@@ -30,7 +30,7 @@ class Profile extends Component {
             <div>
                 Profile
                 Welcome {this.props.user.email} !!! 
-                <form onSubmit={this.handleSubmit} id= "userform">
+                {/* <form onSubmit={this.handleSubmit} id= "userform">
                 <label>
                     Username:
                     <input type="text" name="username" onChange={this.handleChange} />
@@ -82,6 +82,34 @@ class Profile extends Component {
                 </label>
                     <br/>
                 <input type="submit" value="Submit" />
+            </form> */}
+            <form onSubmit={this.handleSubmit} id= "userform">
+                <label>
+                    picture:
+                    <input type="text" name="picture" onChange={this.handleChange} />
+                </label>
+                    <br/>
+                    <label>
+                    title:
+                    <input type="text" name="title" onChange={this.handleChange} />
+                </label>
+                    <br/>
+                <label>
+                    technologies_used:
+                    <textarea name="technologies_used" onChange={this.handleChange}/>
+                </label>
+                    <br/>
+                    <label>
+                    githubrepourl:
+                    <input name="githubrepourl" onChange={this.handleChange}/>
+                </label>
+                    <br/>
+                <label>
+                    description:
+                    <textarea name="description" form="userform" onChange={this.handleChange}>Enter text here...</textarea>
+                </label>
+                    <br/>
+                <input type="submit" value="Submit" />
             </form>
             </div>
         );
@@ -91,3 +119,16 @@ class Profile extends Component {
 }
 
 export default Profile;
+
+
+// picture: String,
+//     title: String,
+//     technologies_used: String,
+//     description: String,
+//     githubrepourl: String,
+//     sitelink: String,
+//     owner: {
+//       type: Schema.Types.ObjectId,
+//       ref:"User"
+//     },
+//     });

@@ -9,7 +9,9 @@ import actions from "./services/index";
 import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
 import Landingpage from "./components/Landingpage/Landingpage"
+import Jobs from './components/jobs/Jobs';
 import "./index.css"
+
 
 class App extends Component {
   state = {};
@@ -41,7 +43,7 @@ class App extends Component {
       <BrowserRouter>
         {this.state.email}
         <nav className = 'nav-item'>
-          <NavLink to="/">Home |</NavLink>
+          {/* <NavLink to="/">Home |</NavLink> */}
 
           {this.state.email ? (
             <Fragment>
@@ -52,14 +54,15 @@ class App extends Component {
             </Fragment>
           ) : (
             <Fragment>
-              <NavLink to="/sign-up">Sign Up |</NavLink>
+              {/* <NavLink to="/sign-up">Sign Up |</NavLink>
               <NavLink to="/log-in">Log In |</NavLink>
-              <NavLink to="/landingpage">Starting screen |</NavLink>
+              <NavLink to="/jobs">Find Jobs</NavLink> */}
             </Fragment>
           )}
         </nav>
         <Switch>
           <Route exact path="/" render={(props) => <Home {...props} />} />
+          <Route exact path="/jobs" render={(props) => <Jobs {...props} />} />
           <Route
             exact
             path="/sign-up"
@@ -70,7 +73,6 @@ class App extends Component {
             path="/log-in"
             render={(props) => <LogIn {...props} setUser={this.setUser} />}
           />
-          <Route exact path='/landingpage' render={() => <Landingpage/>} />
 
           <Route component={NotFound} />
         </Switch>
