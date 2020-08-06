@@ -19,7 +19,7 @@ class Navbar extends Component {
           <li><a href="/">Home</a></li>
           <li><a href="/log-in">Sign-In</a></li>
           <li><a href="/sign-up">Sign-up</a></li>
-          <li><a href="">About Us</a></li>
+          <li><a href="/aboutus">About Us</a></li>
         </ul>
       </div>
       <div class="nav-bg-fostrap">

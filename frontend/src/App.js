@@ -11,6 +11,7 @@ import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
 import Landingpage from "./components/Landingpage/Landingpage"
 import Jobs from './components/jobs/Jobs';
 import "./index.css"
+import Aboutus from "./components/Aboutus/Aboutus";
 
 const App = () => {
   
@@ -66,6 +67,7 @@ const App = () => {
         />
         <Route exact path="/jobs" render={(props) => <Jobs {...props} />} />
         <Route exact path='/landingpage' render={() => <Landingpage/>} />
+        <Route exact path='/aboutus' render={() => <Aboutus/>} />
         <Route component={NotFound} />
       </Switch>
       {!user?.email && <GoogleAuth setUser={setUser} />}

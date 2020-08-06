@@ -53,7 +53,7 @@ class Landingpage extends Component {
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li><a href="#">About</a></li>
+          <li><a href="/aboutus">About</a></li>
           <li><a href="#">Contact Us</a></li>
           <li><a href="/sign-up">Sign-Up</a></li>
           <li><a href="/log-in">Sign-In</a></li>
