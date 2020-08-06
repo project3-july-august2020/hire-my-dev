@@ -27,7 +27,7 @@ class Landingpage extends Component {
           arr[0].classList.add("active")
         }
         else{
-          arr[i+1].classList.add("active")
+          if(arr[i+1])arr[i+1].classList.add("active")
         }
       }, 3000);
     }
