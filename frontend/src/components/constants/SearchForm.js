@@ -19,31 +19,15 @@ function SearchForm({ params, onParamChange }) {
     const classes = useStyles();
 
     return (
-        <form className={classes.root} noValidate autoComplete="off">
+        <form className='search_form' noValidate autoComplete="off">
             <FormGroup row>
             <TextField id="standard-basic" label="Description"  onChange={onParamChange} 
                 value={params.description} name= "description" type='text' variant="outlined" 
-                InputProps={{
-                    endAdornment: (
-                    <InputAdornment>
-                        <IconButton>
-                        <SearchIcon />
-                        </IconButton>
-                    </InputAdornment>
-                    )
-                }}
+                
             />
             <TextField id="standard-basic" label="Location"  onChange={onParamChange} 
                 value={params.location} name= "location" type='text' variant="outlined" 
-                InputProps={{
-                    endAdornment: (
-                    <InputAdornment>
-                        <IconButton>
-                        <SearchIcon />
-                        </IconButton>
-                    </InputAdornment>
-                    )
-                }}
+                
             />
             <FormControlLabel
                 control={

@@ -8,10 +8,12 @@ import Profile from "./components/profile/Profile";
 import actions from "./services/index";
 import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
+import Navbar from "./components/Navbar/Navbar"
 import Landingpage from "./components/Landingpage/Landingpage"
 import Jobs from './components/jobs/Jobs';
 import "./index.css"
 import Aboutus from "./components/Aboutus/Aboutus";
+import UserForm from "./components/UserForm/UserForm";
 
 const App = () => {
   
@@ -33,8 +35,7 @@ const App = () => {
   return(
     <BrowserRouter>
       {user?.email}
-      <nav>
-
+      {/* <nav>
         {user?.email ? (
           <Fragment>
             <NavLink onClick={logOut} to="/">
@@ -44,10 +45,13 @@ const App = () => {
           </Fragment>
         ) : (
           <Fragment>
-            
+          <NavLink to="/">Home|</NavLink>
+          <NavLink to='/aboutus'>|about us</NavLink>
+          <NavLink to='/userform'>|user form</NavLink>
           </Fragment>
         )}
-      </nav>
+      </nav> */}
+      <Navbar />
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />
         <Route
@@ -68,10 +72,11 @@ const App = () => {
         <Route exact path="/jobs" render={(props) => <Jobs {...props} />} />
         <Route exact path='/landingpage' render={() => <Landingpage/>} />
         <Route exact path='/aboutus' render={() => <Aboutus/>} />
+        <Route exact path='/userform' render={() => <UserForm/> } />
         <Route component={NotFound} />
       </Switch>
-      {!user?.email && <GoogleAuth setUser={setUser} />}
-      {!user?.email && <GoogleAuthLogin setUser={setUser} />}
+      {/* {!user?.email && <GoogleAuth setUser={setUser} />}
+      {!user?.email && <GoogleAuthLogin setUser={setUser} />} */}
     </BrowserRouter>
   )
 

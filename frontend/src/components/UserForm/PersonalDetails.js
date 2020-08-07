@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 class PersonalDetails extends Component {
     continue = e => {
@@ -11,64 +11,40 @@ class PersonalDetails extends Component {
     render() {
         const { values, handleChange } = this.props;
         return (
-            <div>
-            <form noValidate autoComplete="on">
-                <div>
-                <Button
-                    variant="contained"
-                    component="label"
-                    >
-                    Upload picture
-                    <input
-                        type="file"
-                        style={{ display: "none" }}
-                    />
-                </Button>
+            <div className="form-container">
+                <h1 className="mb-5">Account Setup</h1>
+                <div className="form-group">
+                    <label htmlFor="username">Full name</label>
+                    <input type="text" className="form-control" name="name" onChange={handleChange('username')} value={values.username} />
                 </div>
-                <TextField
-                    required
-                    // id="outlined-required"
-                    label="Full name"
-                    defaultValue={values.username}
-                    variant="outlined"
-                    onChange={handleChange('username')}
-                />
+                <div className="form-group">
+                    <label htmlFor="skills">Your Catch Phrase</label>
+                    <input type="number" className="form-control" name="phone" onChange={handleChange('skills')} value={values.skills} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="about">Short Bio About Yourself</label>
+                    <textarea type="text" rows="4" className="form-control" name="about" onChange={handleChange('about')} value={values.about} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="githublink"><GitHubIcon /> GitHub link</label> 
+                    <input type="url" className="form-control" name="githublink" onChange={handleChange('githublink')} value={values.githublink} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="linkedinurl"><LinkedInIcon /> LinkedIn url</label> 
+                    <input type="url" className="form-control" name="linkedinurl" onChange={handleChange('linkedinurl')} value={values.linkedinurl} />
+                </div>
+
                 <br />
-                <TextField
-                    id="standard-multiline-static"
-                    label="Short Bio about you"
-                    multiline
-                    variant="outlined"
-                    rows={4}
-                    defaultValue={values.about}
-                    onChange={handleChange('about')}
-                />
-                <br/>
-                <TextField
-                    id="standard-multiline-static"
-                    label="your catch phrase"
-                    multiline
-                    rows={2}
-                    defaultValue={values.skills}
-                    onChange={handleChange('skills')}
-                />
-                <br/>
-                <Button variant="contained" color="primary" style={styles.button} onClick={this.continue}>
-                    continue
-                </Button>
-            </form>
-                            
+
+                <div className="text-right">
+                    <button className="btn btn-primary" onClick={this.continue}>Continue</button>
+                </div>
             </div>
         );
     }
 }
 
-const styles = {
-    button: {
-        margin: 15
-    }
-}
-
 
 export default PersonalDetails;
+
 

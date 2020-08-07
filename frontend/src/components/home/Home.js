@@ -11,8 +11,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        {/* <Landingpage /> */}
-        <UserForm />
+        <Landingpage />
       </div>
     );
   }

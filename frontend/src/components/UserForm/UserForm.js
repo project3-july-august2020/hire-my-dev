@@ -3,6 +3,7 @@ import PersonalDetails from './PersonalDetails';
 import Project from './Projects';
 import Links from './Links';
 import Confirm from './Confirm';
+import './user.css'
 
 class UserForm extends Component {
     state ={
@@ -41,11 +42,15 @@ class UserForm extends Component {
         switch (step) {
             case 1: 
                 return (
-                    <PersonalDetails 
-                        nextStep = {this.nextStep}
-                        handleChange={this.handleChange}
-                        values={values}
-                    />
+                    <div className="form">
+                        {/* <div className="container"> */}
+                            <PersonalDetails 
+                                nextStep = {this.nextStep}
+                                handleChange={this.handleChange}
+                                values={values}
+                            />
+                        {/* </div> */}
+                    </div>  
                 );
             case 2:
                 return ( <Project

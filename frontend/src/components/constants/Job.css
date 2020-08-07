@@ -1,11 +1,19 @@
 
-body{
+/* body{
     background-color: azure;
-}
+} */
+.Job_container{
+    margin: 4;
+  }
+  
 .job_title{
     display: flex;
     font-weight: lighter;
     
+}
+.search_form{
+    display: flex;
+    margin-top: 30px;
 }
 .Chips{
     display: flex;
@@ -25,14 +33,13 @@ body{
 .MuiButtonBase-root {
 
     /*all :unset !important;*/
-    background: red !important;
     border-radius: 100% !important;
     height: 50px !important;
     width:50px !important;
 }
 
 .MuiFormControl-root .MuiButtonBase-root{
-    background: green !important;
+    /* background: green !important; */
     margin-right: -20px;
 }
 
