@@ -21,7 +21,7 @@ export default function JobsPagination(props) {
 
   return (
     <div className={classes.root}>
-      <Typography>Page: {props.page}</Typography>
+
       <Pagination count={10} page={props.page} onChange={handleChange} />
     </div>
   );

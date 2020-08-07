@@ -34,8 +34,8 @@ class Profile extends Component {
     render(){
         return (
             <div>
-                Profile
-                Welcome {this.props.user.email} !!! 
+                {/* Profile
+                Welcome {this.props.user.email} !!!  */}
                 <div id="wrapper" className="divided">
 
             {/* <!-- One --> */}

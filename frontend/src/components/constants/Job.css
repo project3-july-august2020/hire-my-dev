@@ -77,5 +77,6 @@
 .search_form{
     display: flex;
     flex-direction: row;
-    margin-top: 70px;;
+    margin-top: 70px;
+    max-width: 100%;
 }

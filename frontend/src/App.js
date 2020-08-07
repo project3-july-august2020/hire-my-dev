@@ -38,7 +38,7 @@ const App = () => {
     <BrowserRouter>
 
 <div class="container-fluid main">
-      {user?.email}
+      {/* {user?.email} */}
       {/* <nav>
         {user?.email ? (
           <Fragment>

@@ -29,7 +29,7 @@ function SearchForm({ params, onParamChange }) {
                 
             />
             <FormControlLabel
-                className='search_form'
+                className='checkbox'
                 control={
                 <Checkbox
                     onChange={onParamChange}
