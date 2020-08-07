@@ -120,7 +120,7 @@ class Profile extends Component {
                   <ul className="icons">
                     <li><a href="https://github.com/koladeg" className="icon brands style2 fa-github" target="_blank"><span className="label">Github</span></a></li>
                     <li><a href="https://www.linkedin.com/in/kolade-gureje-70a82670" className="icon brands style2 fa-linkedin-in" target="_blank"><span className="label">LinkedIn</span></a></li>
-                    <li><a href="mailto:koladegureje@gmail.com" className="icon style2 fa-envelope"><span className="label">Email</span></a></li>
+                    <li><a href={this.props.user.email} className="icon style2 fa-envelope"><span className="label">Email</span></a></li>
                   </ul>
                 </div>
               </footer>

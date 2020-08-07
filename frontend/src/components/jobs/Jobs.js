@@ -4,6 +4,8 @@ import Job from '../constants/Job';
 import { Container } from '@material-ui/core';
 import JobsPagination from '../constants/JobsPagination';
 import SearchForm from '../constants/SearchForm';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Alert from '@material-ui/lab/Alert';
 
 function Jobs() {
     const [ params, setParams ] = useState({})
@@ -22,8 +24,8 @@ function Jobs() {
             <Container className="Job_container">
             <SearchForm params={params} onParamChange={handleParamChange} />
             <JobsPagination page = {page} setPage={setPage} />
-             {loading && <h1>loading...</h1>}
-             {error && <h1>Error. Try Refreshing.</h1>}   
+             {loading && <CircularProgress />}
+             {error && <Alert severity="error">Error. Try Refreshing.</Alert>}   
              {jobs.map(job => {
                  return <Job key={job.id} job={job} />
              })}

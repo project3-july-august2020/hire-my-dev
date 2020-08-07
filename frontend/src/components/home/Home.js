@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import actions from '../../services/index'
 import Landingpage from "../Landingpage/Landingpage"
+import UserForm from '../UserForm/UserForm';
 
 
 class Home extends Component {
@@ -10,7 +11,8 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Landingpage />
+        {/* <Landingpage /> */}
+        <UserForm />
       </div>
     );
   }
