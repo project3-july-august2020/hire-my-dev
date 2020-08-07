@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import actions from '../../services/index'
 import "./signup.css"
+import Navbar from "../Navbar/Navbar"
 
 class SignUp extends Component {
     state = {
@@ -17,6 +18,7 @@ class SignUp extends Component {
     render() {
         return (
             <Fragment>
+                <Navbar />
                 {/* <h2>SignUP</h2>
                 <form onSubmit={this.handleSubmit}>
                     <input name="email" type="email" onChange={this.handleChange} />

@@ -1,7 +1,7 @@
 import React from "react";
 import actions from "../../services/index";
 import { GoogleLogin } from "react-google-login";
-
+console.log(process.env)
 const responseGoogle = (props) => {
   console.log(props);
   const onResponse = (response) => {

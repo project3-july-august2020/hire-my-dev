@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import actions from '../../services/index'
 import "./login.css"
+import Navbar from "../Navbar/Navbar"
 
 class LogIn extends Component {
 
@@ -17,7 +18,9 @@ class LogIn extends Component {
     }
     render() {
         return (
+            
             <Fragment>
+              <Navbar/>
                 {/* <h2>LogIn</h2>
                 <form onSubmit={this.handleSubmit}>
                     <input name="email" type="email" onChange={this.handleChange} />
@@ -25,7 +28,7 @@ class LogIn extends Component {
                     <input type="submit" value="Log In"/>
                 </form> */}
 
-                <div class="container">
+                <div class="container2">
   <form onSubmit={this.handleSubmit} class="login-form">
     <div class="login-logo">
       <i class="glyphicon glyphicon-picture"></i> <span>Hire-My-Dev</span>

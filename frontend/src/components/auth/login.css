@@ -14,10 +14,20 @@ body{
     background: #FFFFFF;
     max-width:550px;
   }
-  
-  /* .login-form{
+  .container2{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    margin:auto;
+    background: #FFFFFF;
+    max-width:550px;
+    text-align: center;
+  }
+
+  .login-form{
     padding:40px 60px;
-  } */
+    /* height: 300px; */
+  }
+
+
   .login-logo{
     font-size:48px;
     font-weight:600;
@@ -55,4 +65,3 @@ body{
     color:#FFF;
     padding:15px;
   }
-  

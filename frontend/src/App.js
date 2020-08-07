@@ -11,6 +11,7 @@ import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
 import Landingpage from "./components/Landingpage/Landingpage"
 import Jobs from './components/jobs/Jobs';
 import "./index.css"
+import Aboutus from "./components/Aboutus/Aboutus";
 
 const App = () => {
   
@@ -33,7 +34,6 @@ const App = () => {
     <BrowserRouter>
       {user?.email}
       <nav>
-        <NavLink to="/">Home |</NavLink>
 
         {user?.email ? (
           <Fragment>
@@ -44,10 +44,7 @@ const App = () => {
           </Fragment>
         ) : (
           <Fragment>
-            <NavLink to="/sign-up">Sign Up |</NavLink>
-            <NavLink to="/log-in">Log In |</NavLink>
-            <NavLink to="/landingpage">Starting screen |</NavLink>
-            <NavLink to="/jobs">Find Jobs</NavLink>
+            
           </Fragment>
         )}
       </nav>
@@ -70,6 +67,7 @@ const App = () => {
         />
         <Route exact path="/jobs" render={(props) => <Jobs {...props} />} />
         <Route exact path='/landingpage' render={() => <Landingpage/>} />
+        <Route exact path='/aboutus' render={() => <Aboutus/>} />
         <Route component={NotFound} />
       </Switch>
       {!user?.email && <GoogleAuth setUser={setUser} />}

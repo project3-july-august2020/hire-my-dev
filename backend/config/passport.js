@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const User = require('../models/User.js');
 const passport = require('passport');
 
 passport.use(User.createStrategy());
