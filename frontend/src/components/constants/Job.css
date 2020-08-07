@@ -74,3 +74,8 @@
     text-indent: none !important;
     
 }
+.search_form{
+    display: flex;
+    flex-direction: row;
+    margin-top: 70px;;
+}

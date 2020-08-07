@@ -18,7 +18,7 @@ class SignUp extends Component {
     render() {
         return (
             <Fragment>
-                <Navbar />
+                {/* <Navbar /> */}
                 {/* <h2>SignUP</h2>
                 <form onSubmit={this.handleSubmit}>
                     <input name="email" type="email" onChange={this.handleChange} />

@@ -35,13 +35,11 @@ class Landingpage extends Component {
   render() {
     return (
       <div>
-<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'/>
 {/* <link rel="stylesheet" href="./style.css"/> */}
 
 
-<div class="container-fluid main">
 
-  <nav class="navbar navbar-default">
+  {/* <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -62,7 +60,7 @@ class Landingpage extends Component {
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> */}
 
   <div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="3000">
     <div class="carousel-inner" role="listbox">
@@ -82,10 +80,10 @@ class Landingpage extends Component {
     </div>
   </div>
   
-</div>
+{/*</div>
 
 
-{/* <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script> */}
 
 

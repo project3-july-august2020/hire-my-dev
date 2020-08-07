@@ -20,7 +20,6 @@ function SearchForm({ params, onParamChange }) {
 
     return (
         <form className='search_form' noValidate autoComplete="off">
-            <FormGroup row>
             <TextField id="standard-basic" label="Description"  onChange={onParamChange} 
                 value={params.description} name= "description" type='text' variant="outlined" 
                 
@@ -30,6 +29,7 @@ function SearchForm({ params, onParamChange }) {
                 
             />
             <FormControlLabel
+                className='search_form'
                 control={
                 <Checkbox
                     onChange={onParamChange}
@@ -40,7 +40,7 @@ function SearchForm({ params, onParamChange }) {
                 }
                 label="Only Full Time"
             />
-            </FormGroup>
+
         </form>
     );
 }

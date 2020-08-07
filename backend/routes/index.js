@@ -10,8 +10,8 @@ router.get('/', (req, res, next) => {
   res.status(200).json({ msg: 'Working' });
 });
 
-router.post('/fileupload', fileuploader.single('upload'), isAuth, (req, res, next) => {
-  console.log(req.file)
+router.post('/fileupload', [fileuploader.single('imageUrl'), isAuth], (req, res, next) => {
+  console.log(req.file, ' banana')
   res.status(200).json({ msg: 'Working' });
 });
 

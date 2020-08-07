@@ -28,12 +28,16 @@ const App = () => {
   }, [])
 
   const logOut = async () => {
+    console.log('logout');
     let res = await actions.logOut();
+    console.log(res);
     setUser({ email: null, createdAt: null, updatedAt: null, _id: null }); //FIX
   };
 
   return(
     <BrowserRouter>
+
+<div class="container-fluid main">
       {user?.email}
       {/* <nav>
         {user?.email ? (
@@ -51,7 +55,7 @@ const App = () => {
           </Fragment>
         )}
       </nav> */}
-      <Navbar />
+      <Navbar user={user} logOut={logOut}/>
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />
         <Route
@@ -77,6 +81,7 @@ const App = () => {
       </Switch>
       {/* {!user?.email && <GoogleAuth setUser={setUser} />}
       {!user?.email && <GoogleAuthLogin setUser={setUser} />} */}
+      </div>
     </BrowserRouter>
   )
 

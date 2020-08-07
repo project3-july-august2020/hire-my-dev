@@ -7,7 +7,6 @@ class Aboutus extends Component {
         return (
             
             <div>
-                <Navbar />
                 <header class="masthead">
   <p class="masthead-intro">Hi, I'm</p>
   <h1 class="masthead-heading">Kai</h1>
