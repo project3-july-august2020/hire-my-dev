@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import "./Aboutus.css"
+import Navbar from '../Navbar/Navbar';
 
 class Aboutus extends Component {
     render() {
         return (
+            
             <div>
+                <Navbar />
                 <header class="masthead">
   <p class="masthead-intro">Hi, I'm</p>
   <h1 class="masthead-heading">Kai</h1>
