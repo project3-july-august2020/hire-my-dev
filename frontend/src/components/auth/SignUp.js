@@ -24,7 +24,7 @@ class SignUp extends Component {
                     <input name="email" type="email" onChange={this.handleChange} />
                     <input name="password" type="password" onChange={this.handleChange} />
                     <input type="submit" value="Sign Up"/>
-                </form> */}
+                </for> */}
 
                 <div class="container">
   <div class="header-wrap">
