@@ -36,7 +36,7 @@ class LogIn extends Component {
       Welcome, please sign in
     </div>
     <div class="login-input">
-      <label for="username">Email</label>
+      <label for="email">Email</label>
       <input name="email" type="email" onChange={this.handleChange} />
     </div>
     <div class="login-input">

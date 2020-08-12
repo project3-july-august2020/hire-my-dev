@@ -27,21 +27,21 @@ class SignUp extends Component {
                 </for> */}
 
                 <div class="container">
-  <div class="header-wrap">
-    <h1>Hire-My-Dev <br /> Sign Up Page</h1>
-  </div>
-  <form onSubmit={this.handleSubmit} action="#">
-    <div class="text-wrap">
-    <input name="email" type="email" placeholder="Enter Email" onChange={this.handleChange} />
-    </div>
-    <div class="text-wrap">
-    <input name="password" type="password" placeholder="Enter Password" onChange={this.handleChange} />
-    </div>
-    <div class="button-wrap">
-    <input type="submit" value="Sign Up"/>
-    </div>
-  </form>
-</div>
+                    <div class="header-wrap">
+                        <h1>Hire-My-Dev <br /> Sign Up Page</h1>
+                    </div>
+                    <form onSubmit={this.handleSubmit} >
+                        <div class="text-wrap">
+                        <input name="email" type="email" placeholder="Enter Email" onChange={this.handleChange} />
+                        </div>
+                        <div class="text-wrap">
+                        <input name="password" type="password" placeholder="Enter Password" onChange={this.handleChange} />
+                        </div>
+                        <div class="button-wrap">
+                        <input type="submit" value="Sign Up"/>
+                        </div>
+                    </form>
+                </div>
             </Fragment>
         );
     }
