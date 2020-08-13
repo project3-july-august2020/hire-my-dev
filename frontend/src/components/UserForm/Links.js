@@ -21,43 +21,23 @@ class Links extends Component {
     render() {
         const { values, handleChange } = this.props;
         return (
-            <div>
-            <form noValidate autoComplete="on">
-                <div>
-                
-                <Grid container spacing={1} alignItems="flex-end">
-                    <Grid item>
-                        <LinkedInIcon />
-                    </Grid>
-                    <Grid item>
-                        <TextField id="input-with-icon-grid" label="Linkedin Link"  defaultValue={values.linkedinurl}
-                        onChange={handleChange('linkedinurl')} />
-                    </Grid>
-                </Grid>
+            <div className="form-container">
+                    <h1 className="mb-5">Your Social Links</h1>
+                    <div className="form-group">
+                        <label htmlFor='linkedinurl'><LinkedInIcon />Your LinkedIn url</label> 
+                            <input type="text" className="form-control" name='linkedinurl' onChange={handleChange('linkedinurl')} value={values.linkedinurl} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor='githublink'><GitHubIcon /> Your GitHub url</label> 
+                            <input type="url" className="form-control" name='githublink' onChange={handleChange('githublink')} value={values.githublink} />
+                    </div>
+                <div className="text-left">
+                <button className="btn btn-primary" onClick={this.back}>Return</button>
+                </div>
 
+                <div className="text-right">
+                <button className="btn btn-primary" onClick={this.continue}>Continue</button>
                 </div>
-                
-                <div>
-                    <Grid container spacing={1} alignItems="flex-end">
-                    <Grid item>
-                       <GitHubIcon />
-                    </Grid>
-                    <Grid item>
-                        <TextField id="input-with-icon-grid" label="Github Link"  defaultValue={values.githublink}
-                        onChange={handleChange('githublink')} />
-                    </Grid>
-                    </Grid>
-                </div>
-                
-                <br/>
-                    <Button variant="contained" color="secondary" style={styles.button} onClick={this.back}>
-                        Previous
-                    </Button>
-                    <Button variant="contained" color="default" style={styles.button} onClick={this.continue}>
-                        continue
-                    </Button>
-            </form>
-                            
             </div>
         );
     }

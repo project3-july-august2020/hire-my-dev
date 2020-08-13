@@ -3,12 +3,18 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import HttpIcon from '@material-ui/icons/Http';
-import Grid from '@material-ui/core/Grid';
+
+
 
 
 class Project extends Component {
     continue = e => {
         e.preventDefault();
+        if(this.props.index < 2){
+            this.props.nextStep();
+            this.props.addProj();
+        }
+        
         this.props.nextStep();
     }
 
@@ -18,91 +24,55 @@ class Project extends Component {
     }
 
     render() {
-        const { values, handleChange } = this.props;
+        const { values, handleChange, index } = this.props;
+        let picId = `picture-${index}`,titleId = `title-${index}`, descId = `description-${index}`, techId = `technologies_used-${index}`, 
+        gitId = `githubrepourl-${index}`, siteId = `sitelink-${index}` 
         return (
-            <div>
-            <form noValidate autoComplete="on">
-                <div>
-                    <Button
-                        variant="contained"
-                        component="label"
-                        >
-                        Upload Project picture
-                        <input
-                            type="file"
-                            style={{ display: "none" }}
-                        />
-                    </Button>
+            <div className="form-container">
+                <h1 className="mb-5">Project {index + 1}</h1>
+                <div className="form-group">
+                    <label htmlFor={picId}>Upload Project picture for your portfolio</label>
+                    <input
+                                        type="file"
+                                        aria-describedby="inputGroupFileAddon"
+                                        onChange={this.handleFileUpload}
+                                        className="picture"
+                                        name={picId}
+                                        value={values.project[index].picture}
+                                        id={picId}
+                                        data-id={index}
+                                    />
                 </div>
-                <TextField
-                    required
-                    // id="outlined-required"
-                    label="Title"
-                    defaultValue='title'
-                    variant="outlined"
-                    
-                />
-                <TextField
-                    required
-                    // id="outlined-required"
-                    label="Technologies used"
-                    defaultValue='technologies_used'
-                    variant="outlined"
-                    
-                />
-                <br />
-                <TextField
-                    id="standard-multiline-static"
-                    label="Description"
-                    multiline
-                    variant="outlined"
-                    rows={4}
-                    defaultValue='description'
-                    
-                />
-                <br/>
-  
+                <div className="form-group">
+                    <label htmlFor={titleId}>Project Title</label>
+                    <input type="text" className="title" name={titleId} onChange={handleChange('title')} value={values.project[index].title} id={titleId}  data-id={index} />
+               
+                    <label htmlFor={techId}>The Technologies Used</label>
+                    <input type="text" className="technologies_used" name={techId} onChange={handleChange('technologies_used')} value={values.project[index].technologies_used} id={techId} data-id={index} />
                 
-                    <Grid container spacing={1} alignItems="flex-end">
-                    <Grid item>
-                        <GitHubIcon />
-                    </Grid>
-                    <Grid item>
-                        <TextField id="input-with-icon-grid" label="Github Link"  defaultValue={values.skills}
-                    onChange={handleChange('skills')} />
-                    </Grid>
-                    </Grid>
-
-                    <Grid container spacing={1} alignItems="flex-end">
-                    <Grid item>
-                        <HttpIcon />
-                    </Grid>
-                    <Grid item>
-                        <TextField id="input-with-icon-grid" label="Website Link" />
-                    </Grid>
-                    </Grid>
+                    <label htmlFor={descId}>Project Description</label>
+                    <textarea type="text" rows="4" className="description" name={descId} onChange={handleChange('description')} value={values.project[index].description} id={descId} data-id={index} />
+           
+                    <label htmlFor={gitId}><GitHubIcon /> Project GitHub link</label> 
+                    <input type="url" className="githubrepourl" name={gitId} onChange={handleChange('githubrepourl')} value={values.project[index].githubrepourl} id={gitId} data-id={index} />
                 
-
-                <div>
-                    <Button variant="contained" color="secondary" style={styles.button} onClick={this.back}>
-                        Previous
-                    </Button>
-                    <Button variant="contained" color="primary" style={styles.button} onClick={this.continue}>
-                        continue
-                    </Button>
+                    <label htmlFor={siteId}><HttpIcon /> Site's url</label> 
+                    <input type="url" className="sitelink" name={siteId} onChange={handleChange('sitelink')} value={values.project[index].sitelink} id={siteId} data-id={index} />
                 </div>
-            </form>
-                            
-            </div>
+
+                <div className="text-left">
+                    <button className="btn btn-primary" onClick={this.back}>Return</button>
+                </div>
+
+                <div className="text-right">
+                    <button className="btn btn-primary" onClick={this.continue}>Continue</button>
+                </div>
+            </div> 
         );
     }
 }
 
-const styles = {
-    button: {
-        margin: 15
-    }
-}
+
 
 
 export default Project;
@@ -113,3 +83,65 @@ export default Project;
 //     description: String,
 //     githubrepourl: String,
 //     sitelink: String,
+
+
+{/* <h1>Dynamic Form Fields in React</h1>
+<form onSubmit={handleSubmit}>
+  <div className="form-row">
+    {inputFields.map((inputField, index) => (
+      <Fragment key={`${inputField}~${index}`}>
+        <div className="form-group col-sm-6">
+          <label htmlFor="firstName">First Name</label>
+          <input
+            type="text"
+            className="form-control"
+            id="firstName"
+            name="firstName"
+            value={inputField.firstName}
+            onChange={event => handleInputChange(index, event)}
+          />
+        </div>
+        <div className="form-group col-sm-4">
+          <label htmlFor="lastName">Last Name</label>
+          <input
+            type="text" 
+            className="form-control" 
+            id="lastName"
+            name="lastName"
+            value={inputField.lastName}
+            onChange={event => handleInputChange(index, event)}
+          />
+        </div>
+        <div className="form-group col-sm-2">
+          <button
+            className="btn btn-link"
+            type="button"
+            onClick={() => handleRemoveFields(index)}
+          >
+            -
+          </button>
+          <button
+            className="btn btn-link"
+            type="button"
+            onClick={() => handleAddFields()}
+          >
+            +
+          </button>
+        </div>
+      </Fragment>
+    ))}
+  </div>
+  <div className="submit-button">
+    <button
+      className="btn btn-primary mr-2"
+      type="submit"
+      onSubmit={handleSubmit}
+    >
+      Save
+    </button>
+  </div>
+  <br/>
+  <pre>
+    {JSON.stringify(inputFields, null, 2)}
+  </pre>
+</form> */}

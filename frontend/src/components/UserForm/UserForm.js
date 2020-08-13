@@ -14,7 +14,9 @@ class UserForm extends Component {
         githublink: '',
         imageUrl: '',
         linkedinurl:'',
+        project: [{ picture: '', title: '', technologies_used: '',description: '', githubrepourl: '', sitelink: '' }]
     }
+
 
     nextStep = () => {
         const { step } = this.state;
@@ -30,48 +32,102 @@ class UserForm extends Component {
         });
     }
 
+    addProj = () => {
+        this.setState( (prevState) => ({
+            project: [...prevState.project, { picture: '', title: '', technologies_used: '', description: '', githubrepourl: '', sitelink: '' }],
+        }));
+    }
+
     handleChange = input => e => {
-        this.setState({ [input]:  e.target.value });
+
+        if ([input].includes(e.target.id) ) {
+            let project = [...this.state.project]
+            project[e.target.dataset.id][e.target.className] = e.target.value
+            this.setState({ project }, () => console.log(this.state.cats))
+          } else {
+            this.setState({ [input]:  e.target.value });
+          }
     }
 
     render() {
         const { step } = this.state;
-        const { username, about, skills, githublink, imageUrl, linkedinurl} = this.state;
-        const values = {username, about, skills, githublink, imageUrl, linkedinurl}
+        const { username, about, skills, githublink, imageUrl, linkedinurl, project} = this.state;
+        const values = {username, about, skills, githublink, imageUrl, linkedinurl, project}
 
         switch (step) {
             case 1: 
                 return (
                     <div className="form">
-                        {/* <div className="container"> */}
                             <PersonalDetails 
                                 nextStep = {this.nextStep}
                                 handleChange={this.handleChange}
                                 values={values}
                             />
-                        {/* </div> */}
                     </div>  
                 );
             case 2:
-                return ( <Project
+                return ( 
+                    <div className="form">
+                        <div className="form-box">
+                        <Links
+                            nextStep = {this.nextStep}
+                            PreviousStep = {this.PreviousStep}
+                            handleChange={this.handleChange}
+                            values={values}
+                        /> 
+                        </div>     
+                    </div>  
+                    )
+                    case 3:
+                return ( 
+                    <div className="form">
+                        <div className="form-box">
+                        <Project
+                            nextStep = {this.nextStep}
+                            PreviousStep = {this.PreviousStep}
+                            handleChange={this.handleChange}
+                            values={values}
+                            index = {0}
+                            addProj = {this.addProj}
+                        />  
+                        </div>     
+                    </div>  
+                    )
+            case 4:
+                return ( 
+                    <div className="form">
+                        <div className="form-box">
+                        <Project
+                            nextStep = {this.nextStep}
+                            PreviousStep = {this.PreviousStep}
+                            handleChange={this.handleChange}
+                            values={values}
+                            index = {1}
+                            addProj = {this.addProj}
+                        />  
+                        </div>     
+                    </div>  
+                    )
+            case 5:
+                return ( 
+                    <div className="form">
+                        <div className="form-box">
+                        <Project
+                            nextStep = {this.nextStep}
+                            PreviousStep = {this.PreviousStep}
+                            handleChange={this.handleChange}
+                            values={values}
+                            index = {2}
+                        />  
+                        </div>     
+                    </div>  
+                )
+            case 6:
+                return ( <Confirm
                     nextStep = {this.nextStep}
                     PreviousStep = {this.PreviousStep}
-                    handleChange={this.handleChange}
                     values={values}
                 /> )
-            case 3:
-                return ( <Links
-                    nextStep = {this.nextStep}
-                    PreviousStep = {this.PreviousStep}
-                    handleChange={this.handleChange}
-                    values={values}
-                /> )
-            case 4: 
-                return  ( <Confirm
-                        nextStep = {this.nextStep}
-                        PreviousStep = {this.PreviousStep}
-                        values={values}
-                    /> )
             default:
                 break;
         }
@@ -98,3 +154,4 @@ export default UserForm;
 //   favorite_jobs: [String],
 //   googleId: String,
 //   imageUrl: String,
+

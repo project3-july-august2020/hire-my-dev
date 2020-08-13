@@ -36,19 +36,11 @@ class PersonalDetails extends Component {
                 </div>
                 <div className="form-group">
                     <label htmlFor="skills">Your Catch Phrase</label>
-                    <input type="number" className="form-control" name="phone" onChange={handleChange('skills')} value={values.skills} />
+                    <input type="text" className="form-control" name="phone" onChange={handleChange('skills')} value={values.skills} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="about">Short Bio About Yourself</label>
                     <textarea type="text" rows="4" className="form-control" name="about" onChange={handleChange('about')} value={values.about} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="githublink"><GitHubIcon /> GitHub link</label> 
-                    <input type="url" className="form-control" name="githublink" onChange={handleChange('githublink')} value={values.githublink} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="linkedinurl"><LinkedInIcon /> LinkedIn url</label> 
-                    <input type="url" className="form-control" name="linkedinurl" onChange={handleChange('linkedinurl')} value={values.linkedinurl} />
                 </div>
 
                 <br />

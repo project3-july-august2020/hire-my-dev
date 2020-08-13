@@ -43,7 +43,7 @@ class Navbar extends Component {
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li><Link to="/aboutus">About</Link></li>
-          <li><Link to="#">Contact Us</Link></li>
+          <li><Link to="/userform">Contact Us</Link></li>
           {
             !this.props.user?.email ?
           ( <Fragment>
