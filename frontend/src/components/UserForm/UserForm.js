@@ -42,7 +42,7 @@ class UserForm extends Component {
 
         if ([input].includes(e.target.id) ) {
             let project = [...this.state.project]
-            project[e.target.dataset.id][e.target.className] = e.target.value
+            project[e.target.id][e.target.className] = e.target.value
             this.setState({ project }, () => console.log(this.state.cats))
           } else {
             this.setState({ [input]:  e.target.value });

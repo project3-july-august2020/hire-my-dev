@@ -18,26 +18,16 @@ class SignUp extends Component {
     render() {
         return (
             <Fragment>
-                {/* <Navbar /> */}
-                {/* <h2>SignUP</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <input name="email" type="email" onChange={this.handleChange} />
-                    <input name="password" type="password" onChange={this.handleChange} />
-                    <input type="submit" value="Sign Up"/>
-                </for> */}
-
-                <div class="container">
+                <div class="container2">
                     <div class="header-wrap">
                         <h1>Hire-My-Dev <br /> Sign Up Page</h1>
                     </div>
                     <form onSubmit={this.handleSubmit} >
                         <div class="text-wrap">
                         <input name="email" type="email" placeholder="Enter Email" onChange={this.handleChange} />
-                        </div>
-                        <div class="text-wrap">
+                        <div></div>
                         <input name="password" type="password" placeholder="Enter Password" onChange={this.handleChange} />
-                        </div>
-                        <div class="button-wrap">
+            
                         <input type="submit" value="Sign Up"/>
                         </div>
                     </form>
