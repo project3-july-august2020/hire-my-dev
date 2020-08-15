@@ -32,11 +32,11 @@ class PersonalDetails extends Component {
                 </div>
                 <div className="form-group">
                     <label htmlFor="username">Full name</label>
-                    <input type="text" className="form-control" name="name" onChange={handleChange('username')} value={values.username} />
+                    <input type="text" className="form-control" name="username" onChange={handleChange('username')} value={values.username} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="skills">Your Catch Phrase</label>
-                    <input type="text" className="form-control" name="phone" onChange={handleChange('skills')} value={values.skills} />
+                    <input type="text" className="form-control" name="skills" onChange={handleChange('skills')} value={values.skills} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="about">Short Bio About Yourself</label>

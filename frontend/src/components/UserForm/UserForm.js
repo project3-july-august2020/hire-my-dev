@@ -33,20 +33,21 @@ class UserForm extends Component {
     }
 
     addProj = () => {
-        this.setState( (prevState) => ({
-            project: [...prevState.project, { picture: '', title: '', technologies_used: '', description: '', githubrepourl: '', sitelink: '' }],
-        }));
+        if(this.state.project.length < 3){
+            this.setState( (prevState) => ({
+                project: [...prevState.project, { picture: '', title: '', technologies_used: '', description: '', githubrepourl: '', sitelink: '' }],
+            }));
+        }
     }
 
     handleChange = input => e => {
-
-        if ([input].includes(e.target.id) ) {
-            let project = [...this.state.project]
-            project[e.target.id][e.target.className] = e.target.value
-            this.setState({ project }, () => console.log(this.state.cats))
-          } else {
-            this.setState({ [input]:  e.target.value });
-          }
+     this.setState({ [input]:  e.target.value });
+    }
+    handleProjectChange = input => e => {
+        console.log(e.target.dataset.id);
+        let project = [...this.state.project]
+        project[e.target.dataset.id][e.target.name] = e.target.value
+        this.setState({ project }, () => console.log(this.state.project))
     }
 
     render() {
@@ -85,7 +86,7 @@ class UserForm extends Component {
                         <Project
                             nextStep = {this.nextStep}
                             PreviousStep = {this.PreviousStep}
-                            handleChange={this.handleChange}
+                            handleProjectChange={this.handleProjectChange}
                             values={values}
                             index = {0}
                             addProj = {this.addProj}
@@ -100,7 +101,7 @@ class UserForm extends Component {
                         <Project
                             nextStep = {this.nextStep}
                             PreviousStep = {this.PreviousStep}
-                            handleChange={this.handleChange}
+                            handleProjectChange={this.handleProjectChange}
                             values={values}
                             index = {1}
                             addProj = {this.addProj}
@@ -115,7 +116,7 @@ class UserForm extends Component {
                         <Project
                             nextStep = {this.nextStep}
                             PreviousStep = {this.PreviousStep}
-                            handleChange={this.handleChange}
+                            handleProjectChange={this.handleProjectChange}
                             values={values}
                             index = {2}
                         />  
