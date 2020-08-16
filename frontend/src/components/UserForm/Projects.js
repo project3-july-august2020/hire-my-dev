@@ -44,27 +44,27 @@ class Project extends Component {
                                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor={titleId}>Project Title</label>
+                    <label htmlFor={titleId} className="label">Project Title</label>
                     <input type="text" name="title"  onChange={handleProjectChange('title')} value={values.project[index].title} id={titleId}  data-id={index} />
-               
-                    <label htmlFor={techId}>The Technologies Used</label>
+
+                    <div className="fieldset">
+                    <label htmlFor={techId} className="label">The Technologies Used</label>
                     <input type="text" name="technologies_used" onChange={handleProjectChange('technologies_used')} value={values.project[index].technologies_used} id={techId} data-id={index} />
+                    </div>
                 
-                    <label htmlFor={descId}>Project Description</label>
+                    <label htmlFor={descId} className="label">Project Description</label>
                     <textarea type="text" rows="4" name="description" onChange={handleProjectChange('description')} value={values.project[index].description} id={descId} data-id={index} />
            
-                    <label htmlFor={gitId}><GitHubIcon /> Project GitHub link</label> 
+                    <label htmlFor={gitId} className="label"><GitHubIcon /> Project GitHub link</label> 
                     <input type="url" name="githubrepourl" onChange={handleProjectChange('githubrepourl')} value={values.project[index].githubrepourl} id={gitId} data-id={index} />
                 
-                    <label htmlFor={siteId}><HttpIcon /> Site's url</label> 
+                    <label htmlFor={siteId} className="label"><HttpIcon /> Site's url</label> 
                     <input type="url" name="sitelink"  onChange={handleProjectChange('sitelink')} value={values.project[index].sitelink} id={siteId} data-id={index} />
                 </div>
 
-                <div className="text-left">
+                <div className="button-div">
                     <button className="btn btn-primary" onClick={this.back}>Return</button>
-                </div>
 
-                <div className="text-right">
                     <button className="btn btn-primary" onClick={this.continue}>Continue</button>
                 </div>
             </div> 
