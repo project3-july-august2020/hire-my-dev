@@ -10,10 +10,7 @@ const userSchema = new Schema({
   email: String,
   githublink: String,
   about: String,
-  projects: [{
-    type: Schema.Types.ObjectId,
-    ref:"Project"
-  }],
+  projects: [Object],
   favorite_jobs: [String],
   googleId: String,
   imageUrl: String,

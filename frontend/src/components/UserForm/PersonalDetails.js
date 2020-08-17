@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import actions from '../../services';
+
 
 class PersonalDetails extends Component {
     continue = e => {
@@ -9,15 +9,16 @@ class PersonalDetails extends Component {
         this.props.nextStep();
     }
 
-    handleFileUpload = (e) => {
-		const uploadData = new FormData();
-        uploadData.append("imageUrl", e.target.files[0])
-        actions.fileUpload( uploadData).then(res => { 
-            console.log(res.data);
-        })
-}
+//     handleFileUpload = (e) => {
+//         console.log(e.target.files[0]);
+// 		const uploadData = new FormData();
+//         uploadData.append("imageUrl", e.target.files[0])
+//         actions.fileUpload( uploadData).then(res => { 
+//             console.log(res.data);
+//         }).catch(err => console.error(err))
+// }
     render() {
-        const { values, handleChange } = this.props;
+        const { values, handleChange, handleFileUpload } = this.props;
         return (
             <div className="form-container">
                 <h1 className="mb-5">Account Setup</h1>
@@ -25,8 +26,9 @@ class PersonalDetails extends Component {
                     <label htmlFor="skills">Your picture</label>
                     <input
                                         type="file"
+                                        name="imageUrl"
                                         aria-describedby="inputGroupFileAddon"
-                                        onChange={this.handleFileUpload}
+                                        onChange={(e)=>handleFileUpload(e, 'personal_details')}
                                         className="image-upload"
                                     />
                 </div>

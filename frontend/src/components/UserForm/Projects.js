@@ -24,7 +24,7 @@ class Project extends Component {
     }
 
     render() {
-        const { values, handleProjectChange, index } = this.props;
+        const { values, handleProjectChange, index, handleFileUpload} = this.props;
         let picId = `picture-${index}`,titleId = `title-${index}`, descId = `description-${index}`, techId = `technologies_used-${index}`, 
         gitId = `githubrepourl-${index}`, siteId = `sitelink-${index}` 
         return (
@@ -35,9 +35,10 @@ class Project extends Component {
                     <input
                                         type="file"
                                         aria-describedby="inputGroupFileAddon"
-                                        onChange={handleProjectChange('picture')}
-                                        className="picture"
-                                        name={picId}
+                                        //onChange={handleProjectChange('picture')}
+                                        //name="picture"
+                                        name="imageUrl"
+                                        onChange={e=>handleFileUpload(e, index)}
                                         value={values.project[index].picture}
                                         id={picId}
                                         data-id={index}

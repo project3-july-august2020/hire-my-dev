@@ -11,16 +11,20 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/fileupload', [fileuploader.single('imageUrl'), isAuth], (req, res, next) => {
-  console.log(req.file, ' banana')
-  res.status(200).json({ msg: 'Working' });
+  console.log(req.file, ' orange')
+  res.status(200).json(req.file);
 });
 
 
 router.post('/userdata', isAuth,(req, res) => {
+  let body = req.body
+  // body.imageUrl= req.file.path
   console.log('called');
-  User.findByIdAndUpdate(req.user._id, req.body,{ new : true })
+  console.log(body,'coconut');
+  User.findByIdAndUpdate(req.user._id, body,{ new : true })
     .then(result => {res.json(req.body)})
     .catch(error => console.log('An error happened while trying to post User data to database', error));
+    // Project.cre()
 });
 
 router.post('/project', isAuth, (req, res) => {

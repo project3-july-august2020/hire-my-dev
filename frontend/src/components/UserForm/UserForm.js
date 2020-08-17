@@ -3,6 +3,7 @@ import PersonalDetails from './PersonalDetails';
 import Project from './Projects';
 import Links from './Links';
 import Confirm from './Confirm';
+import actions from '../../services';
 import './user.css'
 
 class UserForm extends Component {
@@ -50,6 +51,18 @@ class UserForm extends Component {
         this.setState({ project }, () => console.log(this.state.project))
     }
 
+    handleFileUpload = (e, name) => {
+        console.log(e.target.files[0], name);
+		const uploadData = new FormData();
+        uploadData.append("imageUrl", e.target.files[0])
+        actions.fileUpload( uploadData).then(res => { 
+            console.log(res.data.path, name);
+            let state = {...this.state}
+            //Do your logic
+            this.setState(state)
+        }).catch(err => console.error(err))
+}
+
     render() {
         const { step } = this.state;
         const { username, about, skills, githublink, imageUrl, linkedinurl, project} = this.state;
@@ -63,6 +76,7 @@ class UserForm extends Component {
                                 nextStep = {this.nextStep}
                                 handleChange={this.handleChange}
                                 values={values}
+                                handleFileUpload= {this.handleFileUpload}
                             />
                     </div>  
                 );
@@ -90,6 +104,7 @@ class UserForm extends Component {
                             values={values}
                             index = {0}
                             addProj = {this.addProj}
+                            handleFileUpload= {this.handleFileUpload}
                         />  
                         </div>     
                     </div>  
@@ -105,6 +120,7 @@ class UserForm extends Component {
                             values={values}
                             index = {1}
                             addProj = {this.addProj}
+                            handleFileUpload= {this.handleFileUpload}
                         />  
                         </div>     
                     </div>  
@@ -119,6 +135,7 @@ class UserForm extends Component {
                             handleProjectChange={this.handleProjectChange}
                             values={values}
                             index = {2}
+                            handleFileUpload= {this.handleFileUpload}
                         />  
                         </div>     
                     </div>  

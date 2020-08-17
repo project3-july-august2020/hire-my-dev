@@ -38,12 +38,22 @@
     margin-bottom: -2px;
     margin-top: 12px;
   }
-  .confirm-hearder{
-    margin-left: 10px; ;
-  }
+
   .heading{
     display: flex;
     padding-left:50px;
+  }
+  .confirm-hearder{
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px 80px;
+    max-width: 900px;
+    margin: 10px auto;
+    box-shadow: 0 15px 16px .17px rgba(0,0,0,0.05);
+  }
+
+  .confirm-list{
+    margin-top: 10vh;
   }
   /* form {
     max-width: 500px;
@@ -54,6 +64,13 @@
     background: #f4f7f8;
     border-radius: 8px;
     font-family: Georgia, "Times New Roman", Times, serif;
+
+
+    margin-top: 20vh;
+  width: 300px;
+  height: 400px;
+  padding: 2em;
+  border-radius: 6px;
   }
   fieldset {
     border: none;
