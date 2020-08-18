@@ -1,22 +1,26 @@
 import React, { Component, Fragment } from 'react';
 import actions from '../../services/index'
 import "./signup.css"
-import Navbar from "../Navbar/Navbar"
+import { Redirect } from "react-router-dom";
 
 class SignUp extends Component {
     state = {
-
+        redirect: null
     } 
     handleChange = e => this.setState({[e.target.name]: e.target.value})
 
     handleSubmit =  e => {
         e.preventDefault()
             actions.signUp(this.state).then(user=> {
-                this.props.setUser({...user.data})  
+                this.props.setUser({...user.data}) 
+                this.setState({ redirect: "/profile" }); 
             }).catch(({ response }) => console.error(response.data));
     }
     render() {
-        return (
+        if (this.state.redirect) {
+            return <Redirect to={this.state.redirect} />
+          }
+          return(
             <Fragment>
                 <div class="container2">
                     <div class="header-wrap">
@@ -33,7 +37,7 @@ class SignUp extends Component {
                     </form>
                 </div>
             </Fragment>
-        );
+          )
     }
 }
 

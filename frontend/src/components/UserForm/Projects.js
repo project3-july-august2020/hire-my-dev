@@ -39,9 +39,6 @@ class Project extends Component {
                                         //name="picture"
                                         name="imageUrl"
                                         onChange={e=>handleFileUpload(e, index)}
-                                        value={values.project[index].picture}
-                                        id={picId}
-                                        data-id={index}
                                     />
                 </div>
                 <div className="form-group">

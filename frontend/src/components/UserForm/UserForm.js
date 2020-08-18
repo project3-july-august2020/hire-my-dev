@@ -56,10 +56,15 @@ class UserForm extends Component {
 		const uploadData = new FormData();
         uploadData.append("imageUrl", e.target.files[0])
         actions.fileUpload( uploadData).then(res => { 
-            console.log(res.data.path, name);
+            console.log(res.data.path, name); 
             let state = {...this.state}
             //Do your logic
-            this.setState(state)
+            if(name == 'personal_details'){
+                state.imageUrl = res.data.path
+            }else{
+                state.project[name].picture = res.data.path
+            }
+            this.setState({ state }, () => console.log(this.state.state))
         }).catch(err => console.error(err))
 }
 

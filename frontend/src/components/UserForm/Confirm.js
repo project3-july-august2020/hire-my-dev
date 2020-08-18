@@ -3,8 +3,6 @@ import Container from '@material-ui/core/Container';
 import RenderAccordion from './RenderAccordian';
 
 
-import Grid from '@material-ui/core/Grid';
-
 class Confirm extends Component {
 
     continue = e => {
@@ -62,7 +60,7 @@ class Confirm extends Component {
                 <div className="button-div">
                     <button className="btn btn-primary" onClick={this.back}>Return</button>
 
-                    <button className="btn btn-primary" onClick={this.continue}>Continue</button>
+                    <button onClick={this.continue}>Confirm</button>
                 </div>  
 
                 </Container>
@@ -73,11 +71,6 @@ class Confirm extends Component {
     }
 }
 
-const styles = {
-    button: {
-        margin: 15
-    }
-}
 
 
 export default Confirm;
