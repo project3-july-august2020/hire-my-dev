@@ -43,21 +43,21 @@ class Project extends Component {
                 </div>
                 <div className="form-group">
                     <label htmlFor={titleId} className="label">Project Title</label>
-                    <input type="text" name="title"  onChange={handleProjectChange('title')} value={values.project[index].title} id={titleId}  data-id={index} />
+                    <input type="text" name="title"  onChange={handleProjectChange('title')} value={values.projects[index].title} id={titleId}  data-id={index} />
 
                     <div className="fieldset">
                     <label htmlFor={techId} className="label">The Technologies Used</label>
-                    <input type="text" name="technologies_used" onChange={handleProjectChange('technologies_used')} value={values.project[index].technologies_used} id={techId} data-id={index} />
+                    <input type="text" name="technologies_used" onChange={handleProjectChange('technologies_used')} value={values.projects[index].technologies_used} id={techId} data-id={index} />
                     </div>
                 
                     <label htmlFor={descId} className="label">Project Description</label>
-                    <textarea type="text" rows="4" name="description" onChange={handleProjectChange('description')} value={values.project[index].description} id={descId} data-id={index} />
+                    <textarea type="text" rows="4" name="description" onChange={handleProjectChange('description')} value={values.projects[index].description} id={descId} data-id={index} />
            
                     <label htmlFor={gitId} className="label"><GitHubIcon /> Project GitHub link</label> 
-                    <input type="url" name="githubrepourl" onChange={handleProjectChange('githubrepourl')} value={values.project[index].githubrepourl} id={gitId} data-id={index} />
+                    <input type="url" name="githubrepourl" onChange={handleProjectChange('githubrepourl')} value={values.projects[index].githubrepourl} id={gitId} data-id={index} />
                 
                     <label htmlFor={siteId} className="label"><HttpIcon /> Site's url</label> 
-                    <input type="url" name="sitelink"  onChange={handleProjectChange('sitelink')} value={values.project[index].sitelink} id={siteId} data-id={index} />
+                    <input type="url" name="sitelink"  onChange={handleProjectChange('sitelink')} value={values.projects[index].sitelink} id={siteId} data-id={index} />
                 </div>
 
                 <div className="button-div">

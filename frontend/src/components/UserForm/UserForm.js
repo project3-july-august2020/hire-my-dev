@@ -4,10 +4,12 @@ import Project from './Projects';
 import Links from './Links';
 import Confirm from './Confirm';
 import actions from '../../services';
+import { Redirect } from "react-router-dom";
 import './user.css'
 
 class UserForm extends Component {
     state ={
+        redirect: null,
         step: 1,
         username: '',
         about: '',
@@ -15,7 +17,7 @@ class UserForm extends Component {
         githublink: '',
         imageUrl: '',
         linkedinurl:'',
-        project: [{ picture: '', title: '', technologies_used: '',description: '', githubrepourl: '', sitelink: '' }]
+        projects: [{ picture: '', title: '', technologies_used: '',description: '', githubrepourl: '', sitelink: '' }]
     }
 
 
@@ -34,9 +36,9 @@ class UserForm extends Component {
     }
 
     addProj = () => {
-        if(this.state.project.length < 3){
+        if(this.state.projects.length < 3){
             this.setState( (prevState) => ({
-                project: [...prevState.project, { picture: '', title: '', technologies_used: '', description: '', githubrepourl: '', sitelink: '' }],
+                projects: [...prevState.projects, { picture: '', title: '', technologies_used: '', description: '', githubrepourl: '', sitelink: '' }],
             }));
         }
     }
@@ -45,33 +47,42 @@ class UserForm extends Component {
      this.setState({ [input]:  e.target.value });
     }
     handleProjectChange = input => e => {
-        console.log(e.target.dataset.id);
-        let project = [...this.state.project]
-        project[e.target.dataset.id][e.target.name] = e.target.value
-        this.setState({ project }, () => console.log(this.state.project))
+        // console.log(e.target.dataset.id);
+        let projects = [...this.state.projects]
+        projects[e.target.dataset.id][e.target.name] = e.target.value
+        this.setState({ projects }, () => console.log(this.state.projects))
     }
 
+    //send all image upload to cloudinary
     handleFileUpload = (e, name) => {
         console.log(e.target.files[0], name);
 		const uploadData = new FormData();
         uploadData.append("imageUrl", e.target.files[0])
         actions.fileUpload( uploadData).then(res => { 
-            console.log(res.data.path, name); 
+            // console.log(res.data.path, name); 
             let state = {...this.state}
             //Do your logic
             if(name == 'personal_details'){
                 state.imageUrl = res.data.path
             }else{
-                state.project[name].picture = res.data.path
+                state.projects[name].picture = res.data.path
             }
-            this.setState({ state }, () => console.log(this.state.state))
+            this.setState({ state })
         }).catch(err => console.error(err))
 }
+    //submit all users' data to backend 
+    handleSubmit = e => {
+        e.preventDefault()
+        actions.userdata(this.state).then(user => {
+            this.props.setUser({...user.data})  
+            this.setState({ redirect: "/profile" }); 
+        }).catch(({ response }) => console.error(response.data));
+    }
 
     render() {
         const { step } = this.state;
-        const { username, about, skills, githublink, imageUrl, linkedinurl, project} = this.state;
-        const values = {username, about, skills, githublink, imageUrl, linkedinurl, project}
+        const { username, about, skills, githublink, imageUrl, linkedinurl, projects} = this.state;
+        const values = {username, about, skills, githublink, imageUrl, linkedinurl, projects}
 
         switch (step) {
             case 1: 
@@ -146,11 +157,15 @@ class UserForm extends Component {
                     </div>  
                 )
             case 6:
-                return ( <Confirm
+                if (this.state.redirect) {
+                    return <Redirect to={this.state.redirect} />
+                  }
+                  return ( <Confirm
                     nextStep = {this.nextStep}
                     PreviousStep = {this.PreviousStep}
                     values={values}
                 /> )
+                
             default:
                 break;
         }
@@ -161,7 +176,7 @@ class UserForm extends Component {
 export default UserForm;
 
 // input user info: Full name, about you, picture, catch phase aboutyour occupation.
-//projects: picture, tech used, links: github, live show, codepen, about 
+//: picture, tech used, links: github, live show, codepen, about 
 //links
 
 // username: String,
@@ -177,4 +192,5 @@ export default UserForm;
 //   favorite_jobs: [String],
 //   googleId: String,
 //   imageUrl: String,
+
 

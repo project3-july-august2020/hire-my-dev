@@ -22,7 +22,7 @@ class Confirm extends Component {
         return (
             <div className="confirm-list">
 
-                <Container maxWidth='sm'>
+                <Container >
                 <h2>Review</h2>
                 <RenderAccordion summary="Your Details" details={[
                     { 'Username': username },

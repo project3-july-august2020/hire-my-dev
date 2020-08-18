@@ -5,7 +5,9 @@ import '../../css/noscript.css'
 import image from '../../images/sky.jpg'
 
 class Profile extends Component {
-    state = { }
+    state = { 
+      profile : {}
+    }
 
     componentDidMount(){
         if(!this.props.user.email){ 
@@ -13,7 +15,9 @@ class Profile extends Component {
         } 
 
         actions.getuserdata()
-        .then(res => {console.log(res.data) 
+        .then(res => {
+          this.setState({ profile: res.data.user });
+          console.log(this.state.profile)
         }).catch(({ error }) => console.error(error.data));
     }
 
@@ -25,13 +29,22 @@ class Profile extends Component {
         event.preventDefault();
         let res = await actions.project(this.state)
 
-        console.log(res);
-
-
-        
+        console.log(res);        
     }
 
     render(){
+      //const { email, githublink, linkedinurl, username, about, imageUrl , skills, projects} = this.state;
+
+      // username: String,
+//   skills: String,
+//   linkedinurl: String,
+//   email: String,
+//   githublink: String,
+//   about: String,
+//   projects: [Object],
+//   favorite_jobs: [String],
+//   googleId: String,
+//   imageUrl: String,
         return (
             <div>
                 {/* Profile
@@ -133,3 +146,5 @@ class Profile extends Component {
 }
 
 export default Profile;
+
+

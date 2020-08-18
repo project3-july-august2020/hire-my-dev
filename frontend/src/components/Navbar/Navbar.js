@@ -43,7 +43,7 @@ class Navbar extends Component {
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li><Link to="/aboutus">About</Link></li>
-          <li><Link to="/userform">Contact Us</Link></li>
+          {/* <li><Link to="/userform">Contact Us</Link></li> */}
           {
             !this.props.user?.email ?
           ( <Fragment>
@@ -57,7 +57,7 @@ class Navbar extends Component {
           <li><Link onClick={this.props.logOut}>Sign-Out</Link></li>
           <li><Link to="/profile">Profile</Link></li>
           <li><Link to="/jobs">Jobs</Link></li>
-          <li><Link to="/userform">User form</Link></li>
+          {/* <li><Link to="/userform">User form</Link></li> */}
             </Fragment>
           )
           }

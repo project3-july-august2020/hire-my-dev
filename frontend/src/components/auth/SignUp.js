@@ -13,7 +13,7 @@ class SignUp extends Component {
         e.preventDefault()
             actions.signUp(this.state).then(user=> {
                 this.props.setUser({...user.data}) 
-                this.setState({ redirect: "/profile" }); 
+                this.setState({ redirect: "/userform" }); 
             }).catch(({ response }) => console.error(response.data));
     }
     render() {
