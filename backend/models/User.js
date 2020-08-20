@@ -4,7 +4,6 @@ const PLM = require("passport-local-mongoose");
 
 console.log("IN USERS!!!")
 const userSchema = new Schema({
-  username: String,
   skills: String,
   linkedinurl: String,
   email: String,

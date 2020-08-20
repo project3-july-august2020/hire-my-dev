@@ -5,20 +5,18 @@ import RenderAccordion from './RenderAccordian';
 
 class Confirm extends Component {
 
-    continue = e => {
-        e.preventDefault();
-        this.props.nextStep();
+    confirm = e => {   
+        this.props.handleSubmit();
     }
 
     back = e => {
-        e.preventDefault();
         this.props.PreviousStep();
     }
 
 
     render() {
         
-        const { values : {username, about, skills, githublink, imageUrl, linkedinurl, project}} = this.props;
+        const { values : {username, about, skills, githublink, imageUrl, linkedinurl, projects}} = this.props;
         return (
             <div className="confirm-list">
 
@@ -33,34 +31,34 @@ class Confirm extends Component {
                     { 'Your linkedin url ': linkedinurl },
                 ]} />
                 <RenderAccordion summary="First project" details={[
-                    { 'Title': project[0].title },
-                    { 'Picture': project[0].picture },
-                    { 'Technologies Used': project[0].technologies_used },
-                    { 'Project Description': project[0].description },
-                    { 'Project Github url': project[0].githubrepourl },
-                    { 'Project Website': project[0].sitelink },
+                    { 'Title': projects[0].title },
+                    { 'Picture': projects[0].picture },
+                    { 'Technologies Used': projects[0].technologies_used },
+                    { 'Project Description': projects[0].description },
+                    { 'Project Github url': projects[0].githubrepourl },
+                    { 'Project Website': projects[0].sitelink },
                 ]} />
                 <RenderAccordion summary="Second project" details={[
-                    { 'Title': project[1].title },
-                    { 'Picture': project[1].picture },
-                    { 'Technologies Used': project[1].technologies_used },
-                    { 'Project Description': project[1].description },
-                    { 'Project Github url': project[1].githubrepourl },
-                    { 'Project Website': project[1].sitelink },
+                    { 'Title': projects[1].title },
+                    { 'Picture': projects[1].picture },
+                    { 'Technologies Used': projects[1].technologies_used },
+                    { 'Project Description': projects[1].description },
+                    { 'Project Github url': projects[1].githubrepourl },
+                    { 'Project Website': projects[1].sitelink },
                 ]} />
                 <RenderAccordion summary="Third project" details={[
-                    { 'Title': project[2].title },
-                    { 'Picture': project[2].picture },
-                    { 'Technologies Used': project[2].technologies_used },
-                    { 'Project Description': project[2].description },
-                    { 'Project Github url': project[2].githubrepourl },
-                    { 'Project Website': project[2].sitelink },
+                    { 'Title': projects[2].title },
+                    { 'Picture': projects[2].picture },
+                    { 'Technologies Used': projects[2].technologies_used },
+                    { 'Project Description': projects[2].description },
+                    { 'Project Github url': projects[2].githubrepourl },
+                    { 'Project Website': projects[2].sitelink },
                 ]} />
                 <br/>
                 <div className="button-div">
                     <button className="btn btn-primary" onClick={this.back}>Return</button>
 
-                    <button onClick={this.continue}>Confirm</button>
+                    <button onClick={this.confirm}>Confirm</button>
                 </div>  
 
                 </Container>

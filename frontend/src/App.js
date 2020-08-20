@@ -76,7 +76,7 @@ const App = () => {
         <Route exact path="/jobs" render={(props) => <Jobs {...props} />} />
         <Route exact path='/landingpage' render={() => <Landingpage/>} />
         <Route exact path='/aboutus' render={() => <Aboutus/>} />
-        <Route exact path='/userform' render={() => <UserForm/> } />
+        <Route exact path='/userform' render={(props) => <UserForm {...props} setUser = {setUser}/> } />
         <Route component={NotFound} />
       </Switch>
       {/* {!user?.email && <GoogleAuth setUser={setUser} />}
