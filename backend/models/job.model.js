@@ -2,16 +2,16 @@ const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 
 const jobSchema  = new Schema({
-    id: String,
+    id: { type : String , unique : true, required : true, dropDups: true },
     type: String,
-    url: String,
-    createdate: String,
+    description: String,
+    created_at: String,
     company: String,
-    company_url: String,
     location: String,
     title: String,
     how_to_apply: String,
     company_logo:String,
+    owner:String,
     });
 
     module.exports = model('Job', jobSchema);

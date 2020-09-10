@@ -14,6 +14,7 @@ import Jobs from './components/jobs/Jobs';
 import "./index.css"
 import Aboutus from "./components/Aboutus/Aboutus";
 import UserForm from "./components/UserForm/UserForm";
+import FavoriteJobs from "./components/jobs/FavoriteJobs";
 
 const App = () => {
   
@@ -77,6 +78,11 @@ const App = () => {
         <Route exact path='/landingpage' render={() => <Landingpage/>} />
         <Route exact path='/aboutus' render={() => <Aboutus/>} />
         <Route exact path='/userform' render={(props) => <UserForm {...props} setUser = {setUser}/> } />
+        <Route
+          exact
+          path="/favorites"
+          render={(props) => <FavoriteJobs {...props} user={user} />}
+        />
         <Route component={NotFound} />
       </Switch>
       {/* {!user?.email && <GoogleAuth setUser={setUser} />}

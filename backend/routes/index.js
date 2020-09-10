@@ -29,7 +29,7 @@ router.post('/userdata', isAuth,(req, res) => {
     // Project.cre()
 });
 
-// router.post('/project', isAuth, (req, res) => {
+// router.post('/favoritejob', isAuth, (req, res) => {
 //   console.log('called');
 //   Project.create({...req.body, owner: req.user._id})
 //   .then(result => {
@@ -45,7 +45,7 @@ router.post('/userdata', isAuth,(req, res) => {
 
 router.get('/getuserdata', isAuth, (req, res) => {
   console.log('called');
-  User.findById(req.user._id).populate('projects')
+  User.findById(req.user._id)
   .then(user => res.json({user}))
   .catch(error => res.json({error}));
 });
@@ -53,18 +53,33 @@ router.get('/getuserdata', isAuth, (req, res) => {
 router.post('/favorite_job', isAuth, (req, res) => {
   console.log('called');
   //will also need to add _id to userdata favorite_jobs string
-  Job.create(req.body)
-    .then(res.json('User data is added'))
+  Job.create({...req.body, owner: req.user._id})
+    .then(result => {res.json(result)})
     .catch(error => console.log('An error happened while trying to post user data to database', error));
 });
 
-router.get('deleteproject/:id', isAuth, (req, res) => {
+router.get('/getfavoritejobs', isAuth, (req, res) => {
+  console.log('called');
+  Job.find({owner : req.user._id})
+  .then(result => {res.json(result)})
+  .catch(error => res.json({error}));
+});
+
+router.get('/deletejob/:id', isAuth, (req, res) => {
   console.log('called');
   //will also need to add _id to userdata favorite_jobs string
-  Project.findByIdAndDelete(req.params.id)
-    .then(res.json('project deleted'))
+  Job.findByIdAndDelete(req.params.id)
+    .then(res.json('favorite job deleted'))
     .catch(error => console.log('An error happened while trying to delete project', error));
 });
+
+// router.get('/deletejob/:id', isAuth, (req, res) => {
+//   console.log('called');
+//   //will also need to add _id to userdata favorite_jobs string
+//   Project.findByIdAndDelete(req.params.id)
+//     .then(res.json('project deleted'))
+//     .catch(error => console.log('An error happened while trying to delete project', error));
+// });
 
 function isAuth(req, res, next) {
   req.isAuthenticated() ? next() : res.status(401).json({ msg: 'Log in first' });

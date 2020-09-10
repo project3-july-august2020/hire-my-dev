@@ -4,10 +4,12 @@ import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import { CardActions, CardContent, IconButton, Collapse, Chip , Typography } from '@material-ui/core';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
+import DeleteIcon from '@material-ui/icons/Delete';
+// import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ReactMarkdown from 'react-markdown/with-html';
 import './Job.css';
+import actions from '../../services';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -26,15 +28,29 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-function Job({ job }) {
+function Job({ job, favoriteJob, load }) {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
+    const [disabled, setDisabled] = React.useState(false);
+
+    const handleSubmit = () => {
+      actions.favoriteJob(job).then(user => {
+          console.log(user); 
+          setDisabled(true)
+      }).catch(( response ) => console.error(response));
+  }
+
+  const handleDelete = () => {
+    actions.deleteJob(job._id)
+    load() 
+}
 
     const handleExpandClick = () => {
       setExpanded(!expanded);
     };
     console.log(job)
     return (
+      
         <Card className={classes.root}>
             <CardContent>
             <div className="job_card">
@@ -57,12 +73,24 @@ function Job({ job }) {
             </div> 
             </CardContent>
             <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                    <FavoriteIcon />
+            {!favoriteJob ? (
+                <IconButton aria-label="add to favorites"
+                  disabled={disabled}
+                  onClick={handleSubmit}
+                  >
+                      <FavoriteIcon />
+                  </IconButton>
+              ):(
+                <IconButton aria-label="Delete from favorites"
+                onClick={handleDelete}
+                >
+                    <DeleteIcon/>
                 </IconButton>
-                <IconButton aria-label="share">
+              )
+            }
+                {/* <IconButton aria-label="share">
                     <ShareIcon />
-                </IconButton>
+                </IconButton> */}
                 <IconButton
                 className={clsx(classes.expand, {
                     [classes.expandOpen]: expanded,
@@ -87,3 +115,7 @@ function Job({ job }) {
 }
 
 export default Job;
+
+
+
+

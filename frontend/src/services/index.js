@@ -33,6 +33,15 @@ const actions = {
   getuserdata: async () => {
     return await service.get('/getuserdata')
   },
+  favoriteJob: async (data) => {
+    return await service.post('/favorite_job', data)
+  },
+  getFavoriteJobs: async () => {
+    return await service.get('/getfavoritejobs')
+  },
+  deleteJob: async (data) => {
+    return await service.get(`/deletejob/${data} `)
+  },
 };
 
 export default actions;
