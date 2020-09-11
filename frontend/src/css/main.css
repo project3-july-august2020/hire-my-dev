@@ -2785,15 +2785,15 @@ input, select, textarea {
 			}
 
 		ul.actions.stacked {
-			-moz-flex-direction: column;
-			-webkit-flex-direction: column;
-			-ms-flex-direction: column;
-			flex-direction: column;
-			margin-left: 0;
+			-moz-flex-direction: row;
+			-webkit-flex-direction: row;
+			-ms-flex-direction: row;
+			flex-direction: row;
+			
 		}
 
 			ul.actions.stacked li {
-				padding: 1.3rem 0 0 0;
+				/* padding: 1.3rem 0 0 0; */
 			}
 
 				ul.actions.stacked li:first-child {

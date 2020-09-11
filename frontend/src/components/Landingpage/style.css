@@ -116,9 +116,13 @@
 
 .covertext {
   position: absolute; /* To make the div to be place anywhere. It is out of the document flow */
+  display: flex;
+  flex-direction: column;
   top: 200px; /* The distance between the div with the top of document */
   left: 0px; /* Make the div full width */
   right: 0px; /* Make the div full width */
+  justify-content: center;
+  align-items: center;
 }
 
 .title {
@@ -172,4 +176,50 @@
 .btn.active.focus {
   color: #ffffff;
   outline: none;
+}
+
+#features {
+  display: flex;
+  padding: 20px;
+  margin: 0 20px;
+  flex-direction: column;
+  align-items: center;
+}
+.contain{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin: 0 100px;
+}
+.contain > div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.img {
+  width: 40px;
+}
+
+#features p {
+  width: 70%;
+}
+
+
+.feature-btn{
+  width: 400px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-decoration: none;
+  padding:15px 55px;
+  margin: 100px auto;
+  font-weight: bold;
+  font-size: 1.3em;
+  background-color: black;
+  color: white;
+  box-shadow: 8px 8px 0 rgba(128,83,35,.2);
+}
+
+#features h4 {
+  color: #ED1C24;
+  font-size: large;
 }

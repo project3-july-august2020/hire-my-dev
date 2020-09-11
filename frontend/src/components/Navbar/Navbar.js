@@ -46,14 +46,14 @@ class Navbar extends Component {
           {
             !this.props.user?.email ?
           ( <Fragment>
-            <li><Link to="/sign-up">Sign-Up</Link></li>
+            {/* <li><Link to="/sign-up">Sign-Up</Link></li> */}
           <li><Link to="/log-in">Sign-In</Link></li>
             </Fragment>
           )
 
           :
           ( <Fragment>
-          <li><Link onClick={this.props.logOut}>Sign-Out</Link></li>
+          <li><Link to="/" onClick={this.props.logOut}>Sign-Out</Link></li>
           <li><Link to="/profile">Profile</Link></li>
           <li><Link to="/jobs">Jobs</Link></li>
           <li><Link to="/favorites">Favorites</Link></li>

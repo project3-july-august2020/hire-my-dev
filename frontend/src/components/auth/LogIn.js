@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import actions from '../../services/index'
 import "./login.css"
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 class LogIn extends Component {
 
@@ -51,6 +51,9 @@ class LogIn extends Component {
               </div>
               <div class="login-submit">
                 <input type="submit" value="Log In"/>
+              </div>
+              <div class="login-forgot">
+                <Link to="/sign-up">Sign-Up</Link>
               </div>
             </form>
           </div>

@@ -51,13 +51,19 @@ class Profile extends Component {
               {/* <!-- One --> */}
                 <section className="banner style1 orient-left content-align-left Url-position-right fullscreen onload-image-fade-in onload-content-fade-right">
                   <div className="content">
+
                     <h1>{username}</h1>
                     <p className="major">{skills}</p>
-                    <h3>My Porfolio</h3>
-                    <p className="major">A showcase of my projects and abilities. </p>
+
+                    <div className="inner">
+                      <h2>About Me</h2>
+                      <p>{about}</p>
+                    </div>
+                    
+                    {/* <p className="major">A showcase of my projects and abilities. </p>
                     <ul className="actions stacked">
                       <li><a href="#first" className="button big wide smooth-scroll-middle">Get Started</a></li>
-                    </ul>
+                    </ul> */}
                   </div>
                   <div className="image">
                     <img src= {imageUrl} alt="" />
@@ -120,12 +126,8 @@ class Profile extends Component {
                 </section> */}
 
               {/* <!-- Five --> */}
-                <section className="wrapper style1 align-center">
-                  <div className="inner">
-                    <h2>About Me</h2>
-                    <p>{about}</p>
-                  </div>
-                </section>
+                {/* <section className="wrapper style1 align-center">
+                </section> */}
 
 
               {/* // Footer */}

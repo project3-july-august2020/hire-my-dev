@@ -58,7 +58,7 @@ const App = () => {
       </nav> */}
       <Navbar user={user} logOut={logOut}/>
       <Switch>
-        <Route exact path="/" render={(props) => <Home {...props} />} />
+        <Route exact path="/" render={(props) => <Landingpage {...props} user={user}  />} />
         <Route
           exact
           path="/sign-up"
