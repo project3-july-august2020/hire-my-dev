@@ -6,6 +6,7 @@ console.log("IN USERS!!!")
 const userSchema = new Schema({
   skills: String,
   linkedinurl: String,
+  username: String,
   email: String,
   githublink: String,
   about: String,

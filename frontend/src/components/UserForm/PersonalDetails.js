@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 
 class PersonalDetails extends Component {
@@ -38,16 +36,16 @@ class PersonalDetails extends Component {
                 </div>
                 <div className="form-group">
                     <label htmlFor="skills">Your Catch Phrase</label>
-                    <input type="text" className="form-control" name="skills" onChange={handleChange('skills')} value={values.skills} />
+                    <textarea  type="text" rows="2" className="form-control" name="skills" onChange={handleChange('skills')} value={values.skills} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="about">Short Bio About Yourself</label>
-                    <textarea type="text" rows="4" className="form-control" name="about" onChange={handleChange('about')} value={values.about} />
+                    <textarea type="text" rows="9" className="form-control" name="about" onChange={handleChange('about')} value={values.about} />
                 </div>
 
                 <br />
 
-                <div className="text-right">
+                <div className="button-div">
                     <button className="btn btn-primary" onClick={this.continue}>Continue</button>
                 </div>
             </div>

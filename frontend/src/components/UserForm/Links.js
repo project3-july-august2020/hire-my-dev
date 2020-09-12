@@ -31,11 +31,9 @@ class Links extends Component {
                             <label htmlFor='githublink'><GitHubIcon /> Your GitHub url</label> 
                             <input type="url" className="form-control" name='githublink' onChange={handleChange('githublink')} value={values.githublink} />
                     </div>
-                <div className="text-left">
+                <div className="button-div">
                 <button className="btn btn-primary" onClick={this.back}>Return</button>
-                </div>
 
-                <div className="text-right">
                 <button className="btn btn-primary" onClick={this.continue}>Continue</button>
                 </div>
             </div>

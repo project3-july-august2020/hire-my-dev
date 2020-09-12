@@ -58,7 +58,7 @@ class Confirm extends Component {
                 <div className="button-div">
                     <button className="btn btn-primary" onClick={this.back}>Return</button>
 
-                    <button onClick={this.confirm}>Confirm</button>
+                    <button className="btn btn-primary" onClick={this.confirm}>Confirm</button>
                 </div>  
 
                 </Container>
