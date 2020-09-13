@@ -78,7 +78,7 @@ class UserForm extends Component {
         actions.userdata(this.state).then(user => {
             console.log(user);
             this.props.setUser({...user.data})  
-            //this.setState({ redirect: "/profile" }); 
+            this.setState({ redirect: "/profile" }); 
         }).catch(( response ) => console.error(response));
     }
 

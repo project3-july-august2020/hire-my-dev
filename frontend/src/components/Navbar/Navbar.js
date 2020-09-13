@@ -46,7 +46,7 @@ class Navbar extends Component {
           {
             !this.props.user?.email ?
           ( <Fragment>
-            <li><Link to="/userform">Sign-Up</Link></li>
+            {/* <li><Link to="/userform">Sign-Up</Link></li> */}
           <li><Link to="/log-in">Sign-In</Link></li>
             </Fragment>
           )
@@ -57,7 +57,6 @@ class Navbar extends Component {
           <li><Link to="/profile">Profile</Link></li>
           <li><Link to="/jobs">Jobs</Link></li>
           <li><Link to="/favorites">Favorites</Link></li>
-          <li><Link to="/userform">Sign-Up</Link></li>
             </Fragment>
           )
           }

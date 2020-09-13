@@ -20,8 +20,8 @@ router.post('/userdata', isAuth,(req, res) => {
   let body = req.body
   // body.imageUrl= req.file.path
   console.log('called');
-  delete body._id
-  delete body.username
+  // delete body._id
+  // delete body.username
   console.log(body,'coconut');
   User.findByIdAndUpdate(req.user._id, body,{ new : true })
     .then(result => {res.json(result)})
