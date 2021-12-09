@@ -19,7 +19,7 @@
     "react-markdown": "^4.3.1",
     "react-responsive-carousel": "^3.2.9",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.4",
+    "react-scripts": "4.0.0",
     "reactbulma": "^3.0.4"
   },
   "scripts": {
